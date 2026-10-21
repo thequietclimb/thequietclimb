@@ -1,5 +1,9 @@
 {
   "name": "thequietclimb",
   "compatibility_date": "2026-10-01",
-  "assets": { "directory": "./public" }
+  "assets": { "directory": "./public" },
+  "routes": [
+    { "pattern": "thequietclimbsg.com", "custom_domain": true },
+    { "pattern": "www.thequietclimbsg.com", "custom_domain": true }
+  ]
 }
