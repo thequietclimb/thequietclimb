@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal | The Quiet Climb</title>
+<meta name="description" content="Weekly updates from The Quiet Climb: what I built, what I earned, what I learned.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f2ea; --surface:#fffdf9; --ink:#1d1a16; --muted:#6e665b;
+    --line:#e6ddcf; --accent:#c4642a; --accent-ink:#fff; --deep:#1b1712; --deep-ink:#f3ebe0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14110e; --surface:#1d1915; --ink:#f2ebe1; --muted:#a89d8f;
+      --line:#2e2822; --accent:#e0864c; --accent-ink:#14110e; --deep:#0e0c0a; --deep-ink:#f2ebe1;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  em{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:400}
+
+  header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-family:Fraunces,serif;font-weight:600;font-size:18px;text-decoration:none}
+  nav{display:flex;gap:22px;font-size:15px}
+  nav a{text-decoration:none;color:var(--muted)}
+  nav a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:60px 0}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px}
+  .hero h1{font-size:clamp(40px,6.4vw,66px);margin-bottom:20px}
+  .hero p{color:var(--muted);font-size:19px;max-width:28em;margin-bottom:28px}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero img{border-radius:24px;aspect-ratio:1/1;object-fit:cover;box-shadow:0 24px 60px rgba(0,0,0,.15)}
+
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  section h2{font-size:clamp(30px,4.4vw,42px);margin-bottom:14px}
+  .lead{color:var(--muted);max-width:36em;margin-bottom:34px}
+
+  .story{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:start}
+  .story p{margin-bottom:16px;max-width:34em}
+  .story img{border-radius:20px;aspect-ratio:4/5;object-fit:cover}
+
+  .timeline{list-style:none;position:relative;padding-left:28px;max-width:640px}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .timeline li{position:relative;margin-bottom:26px}
+  .timeline li::before{content:"";position:absolute;left:-27px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+  .timeline li.next::before{background:var(--bg);border:2px solid var(--accent)}
+  .timeline .when{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .timeline b{display:block;font-size:18px;margin:2px 0}
+  .timeline span{color:var(--muted);font-size:16px}
+
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column}
+  .card .status{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:10px}
+  .card h3{font-size:22px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px;flex:1;margin-bottom:16px}
+  .card a{font-weight:600;font-size:15px;text-decoration:none;color:var(--accent)}
+
+  .socials{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px}
+  .social{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px;text-decoration:none}
+  .social svg{width:28px;height:28px;flex:none}
+  .social b{display:block}
+  .social span{color:var(--muted);font-size:14px}
+
+  .join{background:var(--deep);color:var(--deep-ink);border-radius:28px;padding:56px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin:64px 0}
+  .join h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+  .join p{opacity:.75}
+  .join form{display:flex;gap:10px;flex-wrap:wrap}
+  .join input{flex:1;min-width:200px;padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:inherit;font:inherit;font-size:15px}
+  .join input::placeholder{color:rgba(243,235,224,.55)}
+  .join small{display:block;margin-top:12px;opacity:.6;font-size:13px}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    nav{display:none}
+    .hero{grid-template-columns:1fr;gap:32px;padding-top:36px}
+    .hero img{order:-1;max-width:420px}
+    .story{grid-template-columns:1fr}
+    .story img{max-width:320px}
+    .projects{grid-template-columns:1fr}
+    .join{grid-template-columns:1fr;padding:40px 24px}
+  }
+  @media (max-width:520px){ .socials{grid-template-columns:1fr} }
+
+  .score{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .stat .k{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .stat .v{font-family:Fraunces,Georgia,serif;font-size:32px;font-weight:600;margin-top:4px}
+  .empty{background:var(--surface);border:1px dashed var(--line);border-radius:18px;padding:28px;color:var(--muted)}
+  .entry{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;margin-bottom:18px}
+  .entry .when{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .entry h3{font-size:24px;margin:6px 0 10px}
+  .entry p{color:var(--muted);margin-bottom:12px}
+  .shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+  .shots img{border-radius:12px;border:1px solid var(--line);cursor:zoom-in}
+  .more{display:inline-block;margin-top:6px;font-weight:600;color:var(--accent);text-decoration:none}
+  @media (max-width:560px){.score{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="/">The Quiet Climb</a>
+    <nav><a href="/#story">Story</a><a href="/#journey">Journey</a><a href="/#projects">Projects</a><a href="journal.html">Journal</a></nav>
+    <a class="btn" href="/#join" style="padding:8px 16px;font-size:14px">Join</a>
+  </div>
+</header>
+<main class="wrap">
+  <section style="border-top:0">
+    <h2>Journal</h2>
+    <p class="lead">Weekly updates from the climb: what I built, what I earned, and what I learned. Newest first.</p>
+    <!-- NEW ENTRIES GO HERE (newest first) -->
+    <div class="empty">The first weekly update is coming soon. Follow along on <a href="https://instagram.com/thequietclimb.sg">Instagram</a> or <a href="https://www.tiktok.com/@thequietclimb.sg">TikTok</a> in the meantime.</div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 The Quiet Climb · Kev L</span>
+    <a href="mailto:thequietclimb.sg@gmail.com">thequietclimb.sg@gmail.com</a>
+  </div>
+</footer>
+</body>
+</html>
