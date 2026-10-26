@@ -74,6 +74,11 @@
   .wa svg{width:30px;height:30px;fill:#fff}
   @media (max-width:860px){.hero{grid-template-columns:1fr}.heroimg{max-width:380px;order:-1}.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}form{grid-template-columns:1fr}}
   @media (max-width:480px){.grid4{grid-template-columns:1fr}.logo small{display:none}}
+  .story{display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:start}
+  .story img{width:180px;height:180px;border-radius:50%;object-fit:cover}
+  .story p{margin-bottom:14px;max-width:40em}
+  .story .sign{color:var(--muted);font-style:italic}
+  @media (max-width:700px){.story{grid-template-columns:1fr}.story img{width:120px;height:120px}}
 </style>
 </head>
 <body>
@@ -103,6 +108,20 @@
     </div>
     <img class="heroimg" src="img/hero.jpg" alt="Kev, your Singapore trip planner, with the city skyline behind">
   </div>
+
+  <section id="story">
+    <div class="story">
+      <img src="img/avatar.jpg" alt="Kev, founder of Pocket Local">
+      <div>
+        <h2><span data-en>Why I started Pocket Local</span><span data-zh>为什么我创办口袋本地通</span></h2>
+        <p><span data-en>Hi, I'm Kev. Growing up, I hardly travelled, and I didn't know much about what lay beyond Singapore.</span><span data-zh>你好，我是 Kev。我小时候很少出国旅行，对新加坡以外的世界了解不多。</span></p>
+        <p><span data-en>That changed when I had two kids. I wanted to world-school them: to let them learn about the world by seeing it, meeting people and experiencing other cultures, not just reading about them. So from when they were little until their teenage years, we travelled together across much of Asia, Australia and Europe.</span><span data-zh>有了两个孩子之后，一切都改变了。我想让他们"以世界为课堂"：亲眼看世界、认识不同的人、体验不同的文化，而不只是从书本上学习。所以从他们年幼到青少年时期，我们一家走遍了亚洲大部分地区，还去了澳大利亚和欧洲。</span></p>
+        <p><span data-en>Along the way I learned what makes or breaks a trip: a good plan. When the plan is right, travel stops being stressful and becomes the best part of the year.</span><span data-zh>一路走来，我明白了一件事：一份好的行程规划，决定了一趟旅行的好坏。计划做对了，旅行就不再是压力，而是一年中最美好的时光。</span></p>
+        <p><span data-en>Over those years, people in so many countries welcomed us, helped us and hosted us well. Pocket Local is my way of returning that kindness. When you come to Singapore, I want you to feel as welcome as my family felt everywhere we went.</span><span data-zh>这些年来，世界各地的人热情地接待和帮助过我们。口袋本地通是我回馈这份善意的方式：当你来到新加坡，我希望你也能感受到我们一家在各地感受到的那份温暖。</span></p>
+        <p class="sign"><span data-en>Kev, founder of Pocket Local</span><span data-zh>Kev，口袋本地通创办人</span></p>
+      </div>
+    </div>
+  </section>
 
   <section id="how">
     <h2><span data-en>How it works</span><span data-zh>如何运作</span></h2>
