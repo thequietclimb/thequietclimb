@@ -25,7 +25,12 @@
       "note": "Fixed drawdown \u00b7 80% profit split"
     }
   ],
-  "rules": [],
+  "rules": [
+    "No martingale. I never double up my lot size to win back a loss.",
+    "Be patient. Wait for a good entry point, not just any entry.",
+    "Trade a lot size that doesn't stress me: I can enter, set my take profit and put my phone down without worrying the account might blow.",
+    "Don't over-expose. Keep my total open lot size under control, recovery entries included."
+  ],
   "verified_url": null,
   "days": [
     {
