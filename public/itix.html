@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iti X SG | Your Singapore trip, planned by a local</title>
+<meta name="description" content="Personal Singapore trip planning by a local: a day-by-day itinerary built around you, an airport welcome, and WhatsApp support while you explore. English and Chinese.">
+<meta property="og:title" content="Iti X SG | Your Singapore trip, planned by a local">
+<meta property="og:description" content="A day-by-day plan built around you, an airport welcome, and a local on WhatsApp. English & 中文.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f6f4ef;--surface:#fffefb;--ink:#17201f;--muted:#5f6b69;--line:#e2ddd2;--accent:#0f7a6c;--accent-ink:#fff;--warm:#d2553f;--deep:#0f2a27;--deep-ink:#eef5f3}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1514;--surface:#172020;--ink:#ecf2f0;--muted:#9fb0ad;--line:#26312f;--accent:#3fb3a2;--accent-ink:#0f1514;--warm:#ec7b62;--deep:#0a1110;--deep-ink:#ecf2f0}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:17px/1.65 Inter,"Noto Sans SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:Fraunces,"Noto Sans SC",Georgia,serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+  html[lang="zh"] h1,html[lang="zh"] h2,html[lang="zh"] h3{font-family:"Noto Sans SC",sans-serif;letter-spacing:0}
+  [data-zh]{display:none}
+  html[lang="zh"] [data-en]{display:none}
+  html[lang="zh"] [data-zh]{display:revert}
+  header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+  .logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none}
+  .logo span{color:var(--warm)}
+  .tools{display:flex;gap:10px;align-items:center}
+  .lang{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;font-family:inherit}
+  .btn.sm{padding:8px 16px;font-size:14px}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;padding:60px 0 48px}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+  .hero h1{font-size:clamp(38px,6vw,60px);margin-bottom:18px}
+  .hero p{color:var(--muted);font-size:19px;margin-bottom:26px;max-width:30em}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .launch{display:inline-block;background:color-mix(in srgb,var(--warm) 14%,transparent);color:var(--warm);font-weight:600;font-size:14px;border-radius:999px;padding:6px 14px;margin-bottom:18px}
+  .heroimg{border-radius:24px;aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.15)}
+  section{padding:60px 0;border-top:1px solid var(--line)}
+  section h2{font-size:clamp(28px,4.2vw,40px);margin-bottom:12px}
+  .lead{color:var(--muted);max-width:38em;margin-bottom:32px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .box h3{font-size:19px;margin-bottom:6px;font-family:Inter,"Noto Sans SC",sans-serif}
+  .box p{color:var(--muted);font-size:15px}
+  .num{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:14px;margin-bottom:12px}
+  .plan{display:flex;flex-direction:column}
+  .plan.main{border:2px solid var(--accent)}
+  .plan .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:8px;min-height:18px}
+  .plan .price{font-family:Fraunces,serif;font-size:34px;font-weight:600;margin:6px 0 2px}
+  .plan .price small{font-family:Inter,sans-serif;font-size:14px;color:var(--muted);font-weight:400}
+  .plan ul{list-style:none;margin:14px 0 20px;display:grid;gap:8px;font-size:15px;flex:1}
+  .plan li::before{content:"✓ ";color:var(--accent);font-weight:600}
+  .offer{background:var(--deep);color:var(--deep-ink);border-radius:18px;padding:20px 24px;margin-top:20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .offer b{font-size:18px}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:600}
+  input,select,textarea{font:inherit;font-size:15px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-weight:400}
+  textarea{min-height:96px;resize:vertical}
+  .full{grid-column:1/-1}
+  .checks{display:flex;flex-wrap:wrap;gap:8px}
+  .checks label{display:flex;align-items:center;gap:6px;font-weight:400;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--bg);cursor:pointer}
+  .note{font-size:13px;color:var(--muted)}
+  details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+  summary{font-weight:600;cursor:pointer}
+  details p{color:var(--muted);margin-top:10px;font-size:15px}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .wa{position:fixed;right:18px;bottom:18px;z-index:6;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .wa svg{width:30px;height:30px;fill:#fff}
+  @media (max-width:860px){.hero{grid-template-columns:1fr}.heroimg{max-width:380px;order:-1}.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}form{grid-template-columns:1fr}}
+  @media (max-width:480px){.grid4{grid-template-columns:1fr}.logo small{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="/itix">Iti <span>X</span> SG</a>
+    <div class="tools">
+      <button class="lang" id="lang" type="button" aria-label="Switch language">中文</button>
+      <a class="btn sm" href="#plan-form"><span data-en>Plan my trip</span><span data-zh>规划我的行程</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div>
+      <div class="launch"><span data-en>Launch offer: first 3 clients S$80 nett</span><span data-zh>开业优惠：前 3 位客户仅 S$80 净价</span></div>
+      <div class="eyebrow"><span data-en>Singapore trip planner · English & 中文</span><span data-zh>新加坡行程规划 · 中文 & English</span></div>
+      <h1><span data-en>Your Singapore trip, planned by a local.</span><span data-zh>由本地人为你量身定制的新加坡之旅。</span></h1>
+      <p><span data-en>A day-by-day plan built around you, a welcome at the airport, and a local on WhatsApp while you explore at your own pace.</span><span data-zh>按你的喜好定制每日行程，抵达时机场迎接，旅途中随时 WhatsApp 联系本地人。自由行，按自己的节奏玩。</span></p>
+      <div class="actions">
+        <a class="btn" href="#plan-form"><span data-en>Start planning</span><span data-zh>开始规划</span></a>
+        <a class="btn ghost" href="https://wa.me/6582752413" target="_blank" rel="noopener"><span data-en>WhatsApp me</span><span data-zh>WhatsApp 联系我</span></a>
+      </div>
+    </div>
+    <img class="heroimg" src="img/hero.jpg" alt="Kev, your Singapore trip planner, with the city skyline behind">
+  </div>
+
+  <section id="how">
+    <h2><span data-en>How it works</span><span data-zh>如何运作</span></h2>
+    <p class="lead"><span data-en>Free-and-easy, with a local in your pocket. You explore on your own; I make sure it all fits together.</span><span data-zh>自由行，但有本地人随时帮你。你自己探索，我负责把一切安排得刚刚好。</span></p>
+    <div class="grid4">
+      <div class="box"><div class="num">1</div><h3><span data-en>Tell me about your trip</span><span data-zh>告诉我你的旅行</span></h3><p><span data-en>Dates, who's coming, budget, what you love. A quick form and a short call.</span><span data-zh>日期、同行人数、预算和喜好。填写简单表格，再简短通话。</span></p></div>
+      <div class="box"><div class="num">2</div><h3><span data-en>Get your plan</span><span data-zh>收到你的行程</span></h3><p><span data-en>A day-by-day itinerary with food picks, maps and booking links within 3 to 5 days.</span><span data-zh>3 至 5 天内收到每日行程，包括美食推荐、地图和预订链接。</span></p></div>
+      <div class="box"><div class="num">3</div><h3><span data-en>Airport welcome</span><span data-zh>机场迎接</span></h3><p><span data-en>I meet you at arrivals with your printed trip folder and a 10-minute briefing.</span><span data-zh>我在入境大厅迎接你，交给你纸本行程资料夹，并做 10 分钟简介。</span></p></div>
+      <div class="box"><div class="num">4</div><h3><span data-en>Explore with backup</span><span data-zh>安心游玩</span></h3><p><span data-en>Rain, changes, or "where do we eat now?". Message me on WhatsApp.</span><span data-zh>下雨、改行程，或者"现在去哪吃？"，随时 WhatsApp 我。</span></p></div>
+    </div>
+  </section>
+
+  <section id="plans">
+    <h2><span data-en>Choose your plan</span><span data-zh>选择你的方案</span></h2>
+    <p class="lead"><span data-en>Prices in SGD per trip, for up to 4 people. No hidden fees and no commissions from any shop or attraction.</span><span data-zh>价格以新元计，每次行程最多 4 人。没有隐藏费用，也不收任何商家或景点的佣金。</span></p>
+    <div class="grid3">
+      <div class="box plan">
+        <div class="tag"></div>
+        <h3><span data-en>Plan</span><span data-zh>行程规划</span></h3>
+        <div class="price">S$129</div>
+        <ul>
+          <li><span data-en>Planning call</span><span data-zh>规划通话</span></li>
+          <li><span data-en>Itinerary for up to 4 days</span><span data-zh>最多 4 天行程</span></li>
+          <li><span data-en>Food picks, maps, booking links</span><span data-zh>美食推荐、地图、预订链接</span></li>
+          <li><span data-en>1 round of changes</span><span data-zh>1 次修改</span></li>
+        </ul>
+        <a class="btn ghost" href="#plan-form"><span data-en>Choose Plan</span><span data-zh>选择此方案</span></a>
+      </div>
+      <div class="box plan main">
+        <div class="tag"><span data-en>Most popular</span><span data-zh>最受欢迎</span></div>
+        <h3><span data-en>Plan + Welcome</span><span data-zh>规划 + 机场迎接</span></h3>
+        <div class="price">S$269</div>
+        <ul>
+          <li><span data-en>Everything in Plan, up to 5 days</span><span data-zh>包含规划方案全部内容，最多 5 天</span></li>
+          <li><span data-en>2 rounds of changes</span><span data-zh>2 次修改</span></li>
+          <li><span data-en>Airport welcome with printed trip folder</span><span data-zh>机场迎接及纸本行程资料夹</span></li>
+          <li><span data-en>10-minute arrival briefing</span><span data-zh>10 分钟抵达简介</span></li>
+        </ul>
+        <a class="btn" href="#plan-form"><span data-en>Choose Plan + Welcome</span><span data-zh>选择此方案</span></a>
+      </div>
+      <div class="box plan">
+        <div class="tag"></div>
+        <h3><span data-en>Plan + Welcome + Support</span><span data-zh>规划 + 迎接 + 全程支援</span></h3>
+        <div class="price">S$399</div>
+        <ul>
+          <li><span data-en>Everything in Plan + Welcome</span><span data-zh>包含规划 + 迎接全部内容</span></li>
+          <li><span data-en>WhatsApp support every day of your trip</span><span data-zh>旅途中每天 WhatsApp 支援</span></li>
+          <li><span data-en>Rain and backup plans</span><span data-zh>雨天及备用方案</span></li>
+          <li><span data-en>Last-minute changes handled</span><span data-zh>临时调整随时协助</span></li>
+        </ul>
+        <a class="btn ghost" href="#plan-form"><span data-en>Choose Full Support</span><span data-zh>选择此方案</span></a>
+      </div>
+    </div>
+    <div class="offer">
+      <div><b><span data-en>Launch offer: S$80 nett for my first 3 clients</span><span data-zh>开业优惠：前 3 位客户 S$80 净价</span></b><br><span style="opacity:.8;font-size:15px"><span data-en>Plan + Welcome, in exchange for honest feedback and a review.</span><span data-zh>享有"规划 + 机场迎接"方案，只需提供真实反馈和评价。</span></span></div>
+      <a class="btn" href="#plan-form"><span data-en>Claim a launch spot</span><span data-zh>抢先预约</span></a>
+    </div>
+    <p class="note" style="margin-top:14px"><span data-en>Extra day S$40 · 5+ people +30% · plan within 48 hours +S$50</span><span data-zh>每加一天 S$40 · 5 人以上 +30% · 48 小时内加急 +S$50</span></p>
+  </section>
+
+  <section id="why">
+    <h2><span data-en>Why plan with me</span><span data-zh>为什么选择我</span></h2>
+    <div class="grid4" style="margin-top:24px">
+      <div class="box"><h3><span data-en>A real local</span><span data-zh>真正的本地人</span></h3><p><span data-en>Not an app or a template. Planned around your interests, pace and budget.</span><span data-zh>不是 App 或模板，而是根据你的兴趣、节奏和预算来规划。</span></p></div>
+      <div class="box"><h3><span data-en>No kickbacks</span><span data-zh>不收佣金</span></h3><p><span data-en>I earn only my fee, so every recommendation is honest.</span><span data-zh>我只收服务费，所以每个推荐都是真心的。</span></p></div>
+      <div class="box"><h3><span data-en>Met in person</span><span data-zh>亲自迎接</span></h3><p><span data-en>A friendly face at the airport and someone to call during your trip.</span><span data-zh>机场有熟悉的面孔迎接，旅途中也有人可以联系。</span></p></div>
+      <div class="box"><h3><span data-en>English & 中文</span><span data-zh>中文 & English</span></h3><p><span data-en>Planning, calls and support in either language.</span><span data-zh>规划、通话和支援都可以用中文或英文。</span></p></div>
+    </div>
+  </section>
+
+  <section id="plan-form">
+    <h2><span data-en>Plan my trip</span><span data-zh>规划我的行程</span></h2>
+    <p class="lead"><span data-en>Fill this in and press send. It opens WhatsApp with your answers ready, and I'll reply within 24 hours.</span><span data-zh>填写后按发送，会自动打开 WhatsApp 并带上你的答案。我会在 24 小时内回复。</span></p>
+    <form id="tripform">
+      <label><span data-en>Your name</span><span data-zh>你的名字</span><input name="name" required></label>
+      <label><span data-en>Where are you travelling from?</span><span data-zh>你从哪里出发？</span><input name="from"></label>
+      <label><span data-en>Arrival date</span><span data-zh>抵达日期</span><input name="arrive" type="date"></label>
+      <label><span data-en>Departure date</span><span data-zh>离开日期</span><input name="leave" type="date"></label>
+      <label><span data-en>Who's travelling?</span><span data-zh>同行人员？</span><input name="who" placeholder="2 adults, 1 child (age 6)"></label>
+      <label><span data-en>Plan</span><span data-zh>方案</span>
+        <select name="plan">
+          <option>Launch offer (S$80)</option><option>Plan (S$129)</option><option selected>Plan + Welcome (S$269)</option><option>Plan + Welcome + Support (S$399)</option><option>Not sure yet</option>
+        </select></label>
+      <label><span data-en>Daily budget per person (excluding hotel)</span><span data-zh>每人每日预算（不含住宿）</span>
+        <select name="budget"><option>Under S$80</option><option>S$80 to S$150</option><option>S$150 to S$300</option><option>S$300+</option></select></label>
+      <label><span data-en>Pace</span><span data-zh>旅行节奏</span>
+        <select name="pace"><option>Relaxed</option><option selected>Balanced</option><option>Packed</option></select></label>
+      <div class="full"><div style="font-size:14px;font-weight:600;margin-bottom:8px"><span data-en>What do you love?</span><span data-zh>你喜欢什么？</span></div>
+        <div class="checks">
+          <label><input type="checkbox" name="love" value="Food">Food 美食</label>
+          <label><input type="checkbox" name="love" value="Nature">Nature 自然</label>
+          <label><input type="checkbox" name="love" value="Shopping">Shopping 购物</label>
+          <label><input type="checkbox" name="love" value="Culture & history">Culture 文化</label>
+          <label><input type="checkbox" name="love" value="Kids & family">Kids 亲子</label>
+          <label><input type="checkbox" name="love" value="Nightlife">Nightlife 夜生活</label>
+          <label><input type="checkbox" name="love" value="Photo spots">Photo spots 拍照</label>
+        </div></div>
+      <label class="full"><span data-en>Anything else? (diet, mobility, must-sees)</span><span data-zh>其他需求？（饮食、行动、必去景点）</span><textarea name="notes"></textarea></label>
+      <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <span class="note"><span data-en>You book and pay for hotels, tickets and transport directly, using the links in your plan.</span><span data-zh>酒店、门票和交通由你直接预订和付款，行程中会附上链接。</span></span>
+        <button class="btn" type="submit"><span data-en>Send via WhatsApp</span><span data-zh>通过 WhatsApp 发送</span></button>
+      </div>
+    </form>
+  </section>
+
+  <section id="faq">
+    <h2><span data-en>Questions</span><span data-zh>常见问题</span></h2>
+    <details><summary><span data-en>Do you book hotels and tickets for me?</span><span data-zh>你会帮我订酒店和门票吗？</span></summary><p><span data-en>No. You stay in control: your plan includes links, and you book and pay directly, so you always get the official price and confirmation in your own name.</span><span data-zh>不会。由你自己掌控：行程里附有链接，你直接预订和付款，确保拿到官方价格，确认单也在你名下。</span></p></details>
+    <details><summary><span data-en>Is this a tour?</span><span data-zh>这是旅行团吗？</span></summary><p><span data-en>No. It's free-and-easy: after the airport welcome you explore on your own, with me on WhatsApp if you need anything.</span><span data-zh>不是。这是自由行：机场迎接后你自己探索，有需要随时 WhatsApp 我。</span></p></details>
+    <details><summary><span data-en>How do I pay?</span><span data-zh>如何付款？</span></summary><p><span data-en>50% deposit to start planning, the rest before your final plan is sent. PayNow, PayPal or bank transfer.</span><span data-zh>先付 50% 订金开始规划，收到最终行程前付清余款。可用 PayNow、PayPal 或银行转账。</span></p></details>
+    <details><summary><span data-en>What if I need to cancel?</span><span data-zh>如果需要取消怎么办？</span></summary><p><span data-en>Full refund before planning starts. Once I've started planning, the deposit isn't refundable, but you'll still receive the plan.</span><span data-zh>开始规划前取消可全额退款。开始规划后订金不予退还，但你仍会收到行程规划。</span></p></details>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Iti X SG · <a href="/">by The Quiet Climb</a> · <span data-en>Trip planning service. You are responsible for your own bookings, travel insurance and safety.</span><span data-zh>行程规划服务。预订、旅游保险及安全由旅客自行负责。</span></span>
+    <a href="https://wa.me/6582752413">WhatsApp +65 8275 2413</a>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/6582752413" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></a>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('lang');
+  function set(l){root.lang=l; btn.textContent=l==='zh'?'English':'中文'; try{localStorage.setItem('itix-lang',l)}catch(e){}}
+  var saved=null; try{saved=localStorage.getItem('itix-lang')}catch(e){}
+  if(saved){set(saved)} else if((navigator.language||'').toLowerCase().indexOf('zh')===0){set('zh')}
+  btn.addEventListener('click',function(){set(root.lang==='zh'?'en':'zh')});
+  document.getElementById('tripform').addEventListener('submit',function(e){
+    e.preventDefault(); var f=e.target, v=function(n){return (f[n]&&f[n].value||'').trim()};
+    var loves=[].slice.call(f.querySelectorAll('input[name=love]:checked')).map(function(x){return x.value}).join(', ');
+    var msg=['Hi Kev! I\'d like to plan a Singapore trip (Iti X SG).','','Name: '+v('name'),'From: '+v('from'),'Dates: '+v('arrive')+' to '+v('leave'),'Travellers: '+v('who'),'Plan: '+v('plan'),'Daily budget: '+v('budget'),'Pace: '+v('pace'),'Loves: '+loves,'Notes: '+v('notes')].join('\n');
+    window.open('https://wa.me/6582752413?text='+encodeURIComponent(msg),'_blank');
+  });
+})();
+</script>
+</body>
+</html>
