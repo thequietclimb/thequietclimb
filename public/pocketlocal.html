@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Iti X SG | Your Singapore trip, planned by a local</title>
+<title>Pocket Local Singapore | Your trip, planned by a local</title>
 <meta name="description" content="Personal Singapore trip planning by a local: a day-by-day itinerary built around you, an airport welcome, and WhatsApp support while you explore. English and Chinese.">
-<meta property="og:title" content="Iti X SG | Your Singapore trip, planned by a local">
+<meta property="og:title" content="Pocket Local Singapore | Your trip, planned by a local">
 <meta property="og:description" content="A day-by-day plan built around you, an airport welcome, and a local on WhatsApp. English & 中文.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,7 @@
 
 <header>
   <div class="wrap">
-    <a class="logo" href="/itix">Iti <span>X</span> SG</a>
+    <a class="logo" href="/pocketlocal">Pocket <span>Local</span> <small style="font-family:Inter,sans-serif;font-size:13px;color:var(--muted);font-weight:500">Singapore · 口袋本地通</small></a>
     <div class="tools">
       <button class="lang" id="lang" type="button" aria-label="Switch language">中文</button>
       <a class="btn sm" href="#plan-form"><span data-en>Plan my trip</span><span data-zh>规划我的行程</span></a>
@@ -220,7 +220,7 @@
 
 <footer>
   <div class="wrap">
-    <span>Iti X SG · <a href="/">by The Quiet Climb</a> · <span data-en>Trip planning service. You are responsible for your own bookings, travel insurance and safety.</span><span data-zh>行程规划服务。预订、旅游保险及安全由旅客自行负责。</span></span>
+    <span>Pocket Local Singapore · 口袋本地通 · <a href="/">by The Quiet Climb</a> · <span data-en>Trip planning service. You are responsible for your own bookings, travel insurance and safety.</span><span data-zh>行程规划服务。预订、旅游保险及安全由旅客自行负责。</span></span>
     <a href="https://wa.me/6582752413">WhatsApp +65 8275 2413</a>
   </div>
 </footer>
@@ -230,14 +230,14 @@
 <script>
 (function(){
   var root=document.documentElement, btn=document.getElementById('lang');
-  function set(l){root.lang=l; btn.textContent=l==='zh'?'English':'中文'; try{localStorage.setItem('itix-lang',l)}catch(e){}}
-  var saved=null; try{saved=localStorage.getItem('itix-lang')}catch(e){}
+  function set(l){root.lang=l; btn.textContent=l==='zh'?'English':'中文'; try{localStorage.setItem('pocketlocal-lang',l)}catch(e){}}
+  var saved=null; try{saved=localStorage.getItem('pocketlocal-lang')}catch(e){}
   if(saved){set(saved)} else if((navigator.language||'').toLowerCase().indexOf('zh')===0){set('zh')}
   btn.addEventListener('click',function(){set(root.lang==='zh'?'en':'zh')});
   document.getElementById('tripform').addEventListener('submit',function(e){
     e.preventDefault(); var f=e.target, v=function(n){return (f[n]&&f[n].value||'').trim()};
     var loves=[].slice.call(f.querySelectorAll('input[name=love]:checked')).map(function(x){return x.value}).join(', ');
-    var msg=['Hi Kev! I\'d like to plan a Singapore trip (Iti X SG).','','Name: '+v('name'),'From: '+v('from'),'Dates: '+v('arrive')+' to '+v('leave'),'Travellers: '+v('who'),'Plan: '+v('plan'),'Daily budget: '+v('budget'),'Pace: '+v('pace'),'Loves: '+loves,'Notes: '+v('notes')].join('\n');
+    var msg=['Hi! I\'d like to plan a Singapore trip with Pocket Local.','','Name: '+v('name'),'From: '+v('from'),'Dates: '+v('arrive')+' to '+v('leave'),'Travellers: '+v('who'),'Plan: '+v('plan'),'Daily budget: '+v('budget'),'Pace: '+v('pace'),'Loves: '+loves,'Notes: '+v('notes')].join('\n');
     window.open('https://wa.me/6582752413?text='+encodeURIComponent(msg),'_blank');
   });
 })();
