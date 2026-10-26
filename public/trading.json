@@ -7,7 +7,7 @@
       "phase": "Phase 1",
       "started": "2026-09-26",
       "target": 10,
-      "progress": 3,
+      "progress": 3.4,
       "daily_loss": 3,
       "max_dd": 10,
       "note": "No time limit"
@@ -22,10 +22,22 @@
       "progress": 0,
       "daily_loss": 8,
       "max_dd": 8,
-      "note": "Fixed drawdown · 80% profit split"
+      "note": "Fixed drawdown \u00b7 80% profit split"
     }
   ],
   "rules": [],
   "verified_url": null,
-  "days": []
+  "days": [
+    {
+      "date": "2026-10-26",
+      "account": "5ers",
+      "result_pct": 0.55,
+      "trades": 8,
+      "rules_kept": null,
+      "rules_total": null,
+      "r_multiple": null,
+      "lesson": "",
+      "screenshot": "img/trading/2026-10-26-5ers.jpg"
+    }
+  ]
 }
