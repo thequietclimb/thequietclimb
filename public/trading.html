@@ -126,6 +126,16 @@
   .chip{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--muted)}
   .day p{color:var(--muted);margin:0}
   .day img{border-radius:12px;border:1px solid var(--line);cursor:zoom-in}
+  .accts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .acct{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .acct .type{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+  .acct h3{font-size:26px;margin:4px 0 2px}
+  .acct .sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .acct .big{font-family:Fraunces,Georgia,serif;font-size:36px;font-weight:600}
+  .acct .lim{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+  .acct .lim div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--muted)}
+  .acct .lim b{display:block;color:var(--ink);font-size:18px}
+  @media (max-width:760px){.accts{grid-template-columns:1fr}}
   .verify{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
   @media (max-width:760px){.status{grid-template-columns:1fr 1fr}.day{grid-template-columns:1fr}}
 </style>
@@ -142,22 +152,17 @@
   <section style="border-top:0;padding-bottom:32px">
     <div class="eyebrow">Prop firm trading</div>
     <h2>One trading day at a time</h2>
-    <p class="lead">I'm working through a prop firm challenge and posting every trading day, wins and losses. Results are shown as a percentage of the account. What I'm really tracking is whether I followed my rules.</p>
+    <p class="lead">I'm trading two prop firm accounts and posting every trading day, wins and losses. Results are shown as a percentage of the account. What I'm really tracking is whether I followed my rules.</p>
     <div class="disclaimer">My personal trading journey. Not financial advice. Trading involves significant risk; past results don't guarantee future results.</div>
   </section>
 
   <section id="status">
-    <h2>Current challenge</h2>
-    <p class="lead" id="challenge-name">Prop firm challenge · starting soon</p>
-    <div class="status">
-      <div class="stat"><div class="k">Phase</div><div class="v" id="s-phase">—</div></div>
-      <div class="stat"><div class="k">Trading days</div><div class="v" id="s-days">0</div></div>
+    <h2>My accounts</h2>
+    <p class="lead">One challenge to pass, one funded account to protect. Results are shown as % of each account.</p>
+    <div class="accts" id="accts"><div class="empty">Account details coming soon.</div></div>
+    <div class="status" style="grid-template-columns:repeat(2,1fr);max-width:520px;margin-top:22px">
+      <div class="stat"><div class="k">Trading days logged</div><div class="v" id="s-days">0</div></div>
       <div class="stat"><div class="k">Rules followed</div><div class="v" id="s-rules">—</div></div>
-      <div class="stat"><div class="k">Drawdown left</div><div class="v" id="s-dd">—</div></div>
-    </div>
-    <div class="progress">
-      <div class="row"><span>Progress to profit target</span><span id="s-prog-label">0% of target</span></div>
-      <div class="bar"><span id="s-prog" style="width:0%"></span></div>
     </div>
   </section>
 
@@ -192,19 +197,26 @@
 <script>
 fetch('trading.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
   const $=id=>document.getElementById(id);
-  const c=d.challenge||{}, days=(d.days||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
-  if(c.name) $('challenge-name').textContent=c.name;
-  if(c.phase) $('s-phase').textContent=c.phase;
-  $('s-days').textContent=days.length;
-  if(c.drawdown_left!=null) $('s-dd').textContent=c.drawdown_left+'%';
-  if(c.progress!=null){const p=Math.max(0,Math.min(100,c.progress/c.target*100));$('s-prog').style.width=p+'%';$('s-prog-label').textContent=c.progress+'% of '+c.target+'% target';}
+  const days=(d.days||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
+  const accts=d.accounts||[], names={};
+  const fmt=s=>new Date(s+'T00:00:00').toLocaleDateString('en-SG',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+  if(accts.length){const box=$('accts');box.innerHTML='';accts.forEach(a=>{names[a.id]=a.name;
+    const el=document.createElement('div');el.className='acct';
+    const sign=a.progress>0?'+':'';
+    let prog='';
+    if(a.target){const p=Math.max(0,Math.min(100,a.progress/a.target*100));prog='<div class="row" style="display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-top:8px"><span>Progress to '+a.target+'% target</span><span>'+Math.round(p)+'%</span></div><div class="bar"><span style="width:'+p+'%"></span></div>';}
+    el.innerHTML='<div class="type"></div><h3></h3><div class="sub"></div><div class="k" style="font-size:13px;color:var(--muted)">Profit so far</div><div class="big '+(a.progress>0?'pos':a.progress<0?'neg':'')+'">'+sign+a.progress+'%</div>'+prog+'<div class="lim"><div>Max daily loss<b>'+a.daily_loss+'%</b></div><div>Max drawdown<b>'+a.max_dd+'%</b></div></div>';
+    el.querySelector('.type').textContent=a.type+' · '+a.phase;
+    el.querySelector('h3').textContent=a.name;
+    el.querySelector('.sub').textContent='Started '+fmt(a.started)+(a.note?' · '+a.note:'');
+    box.appendChild(el);});}
+  $('s-days').textContent=new Set(days.map(x=>x.date)).size;
   const traded=days.filter(x=>x.rules_total), kept=traded.reduce((a,x)=>a+x.rules_kept,0), tot=traded.reduce((a,x)=>a+x.rules_total,0);
   if(tot) $('s-rules').textContent=Math.round(kept/tot*100)+'%';
   if(d.rules&&d.rules.length){const ul=$('rules-list');ul.innerHTML='';d.rules.forEach(r=>{const li=document.createElement('li');li.textContent=r;ul.appendChild(li);});}
   if(d.verified_url){$('verify-link').href=d.verified_url;$('verify-link').style.display='';$('verify-text').textContent='Independently tracked, read-only. Anyone can check the numbers.';}
   if(!days.length) return;
   const box=$('days'); box.innerHTML='';
-  const fmt=s=>new Date(s+'T00:00:00').toLocaleDateString('en-SG',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
   days.forEach((x,i)=>{
     const el=document.createElement('article'); el.className='day';
     const left=document.createElement('div');
@@ -212,6 +224,7 @@ fetch('trading.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
     const r=document.createElement('div'); r.className='res '+(x.result_pct>=0?'pos':'neg'); r.textContent=(x.result_pct>0?'+':'')+x.result_pct+'%'; left.appendChild(r);
     const chips=document.createElement('div'); chips.className='chips';
     const add=t=>{const s=document.createElement('span');s.className='chip';s.textContent=t;chips.appendChild(s);};
+    if(x.account&&names[x.account]) add(names[x.account]);
     add(x.trades+' trade'+(x.trades===1?'':'s'));
     if(x.rules_total) add((x.rules_kept===x.rules_total?'✅ ':'⚠️ ')+'Rules '+x.rules_kept+'/'+x.rules_total);
     if(x.r_multiple!=null) add((x.r_multiple>0?'+':'')+x.r_multiple+'R');

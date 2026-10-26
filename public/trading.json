@@ -1,11 +1,30 @@
 {
-  "challenge": {
-    "name": "Prop firm challenge \u00b7 starting soon",
-    "phase": null,
-    "target": 10,
-    "progress": null,
-    "drawdown_left": null
-  },
+  "accounts": [
+    {
+      "id": "5ers",
+      "name": "The5ers 100K",
+      "type": "Challenge",
+      "phase": "Phase 1",
+      "started": "2026-09-26",
+      "target": 10,
+      "progress": 3,
+      "daily_loss": 3,
+      "max_dd": 10,
+      "note": "No time limit"
+    },
+    {
+      "id": "fxify",
+      "name": "FXIFY 50K",
+      "type": "Instant funding",
+      "phase": "Funded",
+      "started": "2026-10-27",
+      "target": null,
+      "progress": 0,
+      "daily_loss": 8,
+      "max_dd": 8,
+      "note": "Fixed drawdown · 80% profit split"
+    }
+  ],
   "rules": [],
   "verified_url": null,
   "days": []
