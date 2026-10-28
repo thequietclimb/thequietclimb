@@ -7,7 +7,7 @@
       "phase": "Phase 1",
       "started": "2026-09-26",
       "target": 10,
-      "progress": 3.65,
+      "progress": 4.02,
       "daily_loss": 3,
       "max_dd": 10,
       "note": "No time limit"
@@ -22,7 +22,7 @@
       "progress": 0,
       "daily_loss": 8,
       "max_dd": 8,
-      "note": "Fixed drawdown \u00b7 80% profit split"
+      "note": "Fixed drawdown · 80% profit split"
     }
   ],
   "rules": [
@@ -54,6 +54,17 @@
       "r_multiple": null,
       "lesson": "Waited for a retracement that hardly came. No forced trades.",
       "screenshot": "img/trading/2026-10-27-5ers.jpg"
+    },
+    {
+      "date": "2026-10-28",
+      "account": "5ers",
+      "result_pct": 0.37,
+      "trades": 5,
+      "rules_kept": 4,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "Small, steady steps. It's never about the big flashy wins.",
+      "screenshot": "img/trading/2026-10-28-5ers.jpg"
     }
   ]
 }
