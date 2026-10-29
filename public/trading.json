@@ -7,7 +7,7 @@
       "phase": "Phase 1",
       "started": "2026-09-26",
       "target": 10,
-      "progress": 4.02,
+      "progress": 4.68,
       "daily_loss": 3,
       "max_dd": 10,
       "note": "No time limit"
@@ -65,6 +65,17 @@
       "r_multiple": null,
       "lesson": "Small, steady steps. It's never about the big flashy wins.",
       "screenshot": "img/trading/2026-10-28-5ers.jpg"
+    },
+    {
+      "date": "2026-10-29",
+      "account": "5ers",
+      "result_pct": 0.66,
+      "trades": 10,
+      "rules_kept": 4,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "FOMC day, so the market was very volatile. Without discipline, the account would surely be in danger.",
+      "screenshot": "img/trading/2026-10-29-5ers.jpg"
     }
   ]
 }
