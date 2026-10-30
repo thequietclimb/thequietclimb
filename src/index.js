@@ -17,6 +17,9 @@ export default {
         return Response.redirect('https://pocketlocalsg.com/', 301);
       }
     }
+    if (url.hostname.endsWith('thequietclimbsg.com') && (url.pathname === '/pocketlocal' || url.pathname === '/pocketlocal.html' || url.pathname === '/itix' || url.pathname === '/itix.html')) {
+      return Response.redirect('https://pocketlocalsg.com/' + url.search, 301);
+    }
     return env.ASSETS.fetch(request);
   },
 };
