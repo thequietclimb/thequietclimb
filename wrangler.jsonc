@@ -1,9 +1,12 @@
 {
   "name": "thequietclimb",
   "compatibility_date": "2026-10-01",
-  "assets": { "directory": "./public" },
+  "main": "src/index.js",
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
   "routes": [
     { "pattern": "thequietclimbsg.com", "custom_domain": true },
-    { "pattern": "www.thequietclimbsg.com", "custom_domain": true }
+    { "pattern": "www.thequietclimbsg.com", "custom_domain": true },
+    { "pattern": "pocketlocalsg.com", "custom_domain": true },
+    { "pattern": "www.pocketlocalsg.com", "custom_domain": true }
   ]
 }
