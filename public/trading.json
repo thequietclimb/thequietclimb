@@ -7,7 +7,7 @@
       "phase": "Phase 1",
       "started": "2026-09-26",
       "target": 10,
-      "progress": 4.68,
+      "progress": 2.11,
       "daily_loss": 3,
       "max_dd": 10,
       "note": "No time limit"
@@ -76,6 +76,17 @@
       "r_multiple": null,
       "lesson": "FOMC day, so the market was very volatile. Without discipline, the account would surely be in danger.",
       "screenshot": "img/trading/2026-10-29-5ers.jpg"
+    },
+    {
+      "date": "2026-10-30",
+      "account": "5ers",
+      "result_pct": -2.58,
+      "trades": 11,
+      "rules_kept": 3,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "Kept adding buys as gold kept dropping and ended up with more lots open than my rule allows. Closest I've come to the daily limit. Back to small and patient.",
+      "screenshot": "img/trading/2026-10-30-5ers.jpg"
     }
   ]
 }
