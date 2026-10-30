@@ -4,6 +4,9 @@ const PL_HOSTS = new Set(['pocketlocalsg.com', 'www.pocketlocalsg.com']);
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === '/googlec9f09f3f4cdd60e4.html') {
+      return new Response('google-site-verification: googlec9f09f3f4cdd60e4.html', { headers: { 'content-type': 'text/html; charset=utf-8' } });
+    }
     if (url.hostname === 'www.pocketlocalsg.com') {
       url.hostname = 'pocketlocalsg.com';
       return Response.redirect(url.toString(), 301);
