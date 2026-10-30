@@ -12,6 +12,12 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
     if (PL_HOSTS.has(url.hostname)) {
+      if (url.pathname === '/sitemap.xml') {
+        return new Response('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>https://pocketlocalsg.com/</loc></url>\n</urlset>\n', { headers: { 'content-type': 'application/xml' } });
+      }
+      if (url.pathname === '/robots.txt') {
+        return new Response('User-agent: *\nAllow: /\nSitemap: https://pocketlocalsg.com/sitemap.xml\n', { headers: { 'content-type': 'text/plain' } });
+      }
       if (url.pathname === '/' || url.pathname === '/index.html' || url.pathname === '/index') {
         const page = new URL('/pocketlocal', url);
         return env.ASSETS.fetch(new Request(page.toString(), request));
