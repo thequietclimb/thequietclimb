@@ -13,7 +13,7 @@ export default {
     }
     if (PL_HOSTS.has(url.hostname)) {
       if (url.pathname === '/sitemap.xml') {
-        return new Response('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>https://pocketlocalsg.com/</loc></url>\n</urlset>\n', { headers: { 'content-type': 'application/xml' } });
+        return env.ASSETS.fetch(new Request(new URL('/pl-sitemap.xml', url).toString(), request));
       }
       if (url.pathname === '/robots.txt') {
         return new Response('User-agent: *\nAllow: /\nSitemap: https://pocketlocalsg.com/sitemap.xml\n', { headers: { 'content-type': 'text/plain' } });
@@ -25,6 +25,9 @@ export default {
       if (url.pathname === '/pocketlocal' || url.pathname === '/pocketlocal.html') {
         return Response.redirect('https://pocketlocalsg.com/', 301);
       }
+    }
+    if (url.hostname.endsWith('thequietclimbsg.com') && url.pathname.startsWith('/guides/')) {
+      return Response.redirect('https://pocketlocalsg.com' + url.pathname.replace(/\.html$/, ''), 301);
     }
     if (url.hostname.endsWith('thequietclimbsg.com') && (url.pathname === '/pocketlocal' || url.pathname === '/pocketlocal.html' || url.pathname === '/itix' || url.pathname === '/itix.html')) {
       return Response.redirect('https://pocketlocalsg.com/' + url.search, 301);
