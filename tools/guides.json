@@ -1,18 +1,72 @@
 [
   {
+    "slug": "where-locals-eat",
+    "date": "2026-10-31",
+    "title": "Where locals actually eat",
+    "title_zh": "本地人真正吃饭的地方",
+    "summary": "Skip the tourist food halls. Neighbourhood malls have big aircon food courts, right next to the MRT.",
+    "images": [
+      "/home/claude/plpost2/post3/s1.jpg",
+      "/home/claude/plpost2/post3/s2.jpg",
+      "/home/claude/plpost2/post3/s3.jpg",
+      "/home/claude/plpost2/post3/s4.jpg",
+      "/home/claude/plpost2/post3/s5.jpg"
+    ],
+    "alt": "Pocket Local guide slide: where locals actually eat",
+    "instagram": "https://www.instagram.com/pocketlocal.sg/",
+    "sections": [
+      [
+        "AMK Hub · Red line, Ang Mo Kio",
+        "Right next to Ang Mo Kio MRT. Big food court, real heartland vibe, and you pay what locals pay."
+      ],
+      [
+        "Jurong Point · Green line, Boon Lay",
+        "One of the biggest neighbourhood malls in the west, connected to Boon Lay MRT. Lots to eat, all aircon."
+      ],
+      [
+        "City Square Mall · Purple line, Farrer Park",
+        "Connected to Farrer Park MRT, near Little India. An easy stop for lunch after walking around Little India."
+      ],
+      [
+        "Why go?",
+        "Aircon so no sweating in the heat, local prices instead of tourist prices, right next to the station, and it's where Singaporeans eat every day."
+      ]
+    ],
+    "credits": "Photos: ProjectManhattan (CC0), S5A-0043 (CC BY 4.0), Brhb25, Leongyy02 (CC BY-SA 4.0), via Wikimedia Commons"
+  },
+  {
     "slug": "marina-bay-evening",
     "date": "2026-10-30",
     "title": "One easy evening in Marina Bay",
     "title_zh": "玛丽娜湾轻松一晚",
     "summary": "Satay at Lau Pa Sat, the blue line 1 stop to Bayfront, then two free light shows. Kid friendly, no rushing.",
-    "images": ["/home/claude/plpost2/out/s1.jpg","/home/claude/plpost2/out/s2.jpg","/home/claude/plpost2/out/s3.jpg","/home/claude/plpost2/out/s4.jpg","/home/claude/plpost2/out/s5.jpg","/home/claude/plpost2/out/s6.jpg"],
+    "images": [
+      "/home/claude/plpost2/out/s1.jpg",
+      "/home/claude/plpost2/out/s2.jpg",
+      "/home/claude/plpost2/out/s3.jpg",
+      "/home/claude/plpost2/out/s4.jpg",
+      "/home/claude/plpost2/out/s5.jpg",
+      "/home/claude/plpost2/out/s6.jpg"
+    ],
     "alt": "Pocket Local guide slide: one easy evening in Marina Bay",
     "instagram": "https://www.instagram.com/p/DfGWx1jgYv2/",
     "sections": [
-      ["7:00pm · Satay at Lau Pa Sat", "The road beside Lau Pa Sat closes at night and the satay stalls come out. Get chicken and mutton, plus rice cakes (ketupat) for the kids. Lots of stalls will try to get your business. Honestly, they're all just as good. If it's packed, go with them and they'll find you a table. If not, just grab your own, no pressure."],
-      ["After dinner · Blue line, 1 stop", "From Downtown MRT, take the blue line one stop to Bayfront. That's Marina Bay Sands. Walking there takes about 25 minutes, not fun with tired kids. Just tap your bank card at the gantry, no need to buy a ticket."],
-      ["8pm or 9pm · Spectra at Marina Bay Sands", "A free light, water and music show over the bay, about 15 minutes. Sit on the steps at the Event Plaza in front of MBS. There are shows at 8pm and 9pm, so if the kids eat slowly, no need to rush. Just catch the 9pm one."],
-      ["8:45pm · Supertree lights at Gardens by the Bay", "Walk through MBS to the Supertree Grove (around 15 minutes). Lie down on the ground and look up. Free, and kids love it. This works if you caught the 8pm Spectra. Went for 9pm? Save the Supertrees for another night."]
+      [
+        "7:00pm · Satay at Lau Pa Sat",
+        "The road beside Lau Pa Sat closes at night and the satay stalls come out. Get chicken and mutton, plus rice cakes (ketupat) for the kids. Lots of stalls will try to get your business. Honestly, they're all just as good. If it's packed, go with them and they'll find you a table. If not, just grab your own, no pressure."
+      ],
+      [
+        "After dinner · Blue line, 1 stop",
+        "From Downtown MRT, take the blue line one stop to Bayfront. That's Marina Bay Sands. Walking there takes about 25 minutes, not fun with tired kids. Just tap your bank card at the gantry, no need to buy a ticket."
+      ],
+      [
+        "8pm or 9pm · Spectra at Marina Bay Sands",
+        "A free light, water and music show over the bay, about 15 minutes. Sit on the steps at the Event Plaza in front of MBS. There are shows at 8pm and 9pm, so if the kids eat slowly, no need to rush. Just catch the 9pm one."
+      ],
+      [
+        "8:45pm · Supertree lights at Gardens by the Bay",
+        "Walk through MBS to the Supertree Grove (around 15 minutes). Lie down on the ground and look up. Free, and kids love it. This works if you caught the 8pm Spectra. Went for 9pm? Save the Supertrees for another night."
+      ]
     ],
     "credits": "Photos: Basile Morin, kallerna, ZKang123, ScribblingGeek, Kanzcech (Wikimedia Commons, CC BY-SA 4.0)"
   },
@@ -22,13 +76,29 @@
     "title": "Meet Pocket Local, your local friend in Singapore",
     "title_zh": "认识口袋本地通",
     "summary": "Who I am, why I started Pocket Local, and how I plan your Singapore trip.",
-    "images": ["/home/claude/plposts/out/final/pl_post1_1.jpg","/home/claude/plposts/out/final/pl_post1_2.jpg","/home/claude/plposts/out/final/pl_post1_3.jpg","/home/claude/plposts/out/final/pl_post1_4.jpg","/home/claude/plposts/out/final/pl_post1_5.jpg","/home/claude/plposts/out/final/pl_post1_6.jpg"],
+    "images": [
+      "/home/claude/plposts/out/final/pl_post1_1.jpg",
+      "/home/claude/plposts/out/final/pl_post1_2.jpg",
+      "/home/claude/plposts/out/final/pl_post1_3.jpg",
+      "/home/claude/plposts/out/final/pl_post1_4.jpg",
+      "/home/claude/plposts/out/final/pl_post1_5.jpg",
+      "/home/claude/plposts/out/final/pl_post1_6.jpg"
+    ],
     "alt": "Pocket Local introduction slide",
     "instagram": "https://www.instagram.com/p/DfBPkNDmnYn/",
     "sections": [
-      ["Everywhere we travelled, locals looked after us", "My family travelled to many countries, and everywhere we went, local people helped us and looked after us. Now it's my turn, so I started Pocket Local."],
-      ["What I do", "Tell me about your trip: dates, who's coming and what you love. I build your plan day by day, with maps and food picks. Then I'm on WhatsApp the whole trip. Not a tour: you explore freely, and you book your own hotel and tickets."],
-      ["Planned around you", "A sample plan: Day 1, arrive and settle in. Day 2, hawker breakfast and the hidden gems most tourists miss. Day 3 at your own pace, with kids, parents and budget all planned in. English and 中文."]
+      [
+        "Everywhere we travelled, locals looked after us",
+        "My family travelled to many countries, and everywhere we went, local people helped us and looked after us. Now it's my turn, so I started Pocket Local."
+      ],
+      [
+        "What I do",
+        "Tell me about your trip: dates, who's coming and what you love. I build your plan day by day, with maps and food picks. Then I'm on WhatsApp the whole trip. Not a tour: you explore freely, and you book your own hotel and tickets."
+      ],
+      [
+        "Planned around you",
+        "A sample plan: Day 1, arrive and settle in. Day 2, hawker breakfast and the hidden gems most tourists miss. Day 3 at your own pace, with kids, parents and budget all planned in. English and 中文."
+      ]
     ],
     "credits": ""
   }
