@@ -84,6 +84,6 @@ if '<!--GUIDES-->' in s:
 else:
     s = s.replace('  <section id="how">', section + '\n\n  <section id="how">', 1)
 open(p, 'w').write(s)
-urls = [SITE + '/'] + [f'{SITE}/guides/{g["slug"]}' for g in G]
+urls = [SITE + '/', SITE + '/free'] + [f'{SITE}/guides/{g["slug"]}' for g in G]
 open(os.path.join(PUB, 'pl-sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{u}</loc></url>\n' for u in urls) + '</urlset>\n')
 print('built', [g['slug'] for g in G])
