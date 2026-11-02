@@ -32,6 +32,11 @@ export default {
     if (url.hostname.endsWith('thequietclimbsg.com') && (url.pathname === '/pocketlocal' || url.pathname === '/pocketlocal.html' || url.pathname === '/itix' || url.pathname === '/itix.html')) {
       return Response.redirect('https://pocketlocalsg.com/' + url.search, 301);
     }
+    if (url.pathname.startsWith('/share/')) {
+      const r = await env.ASSETS.fetch(request);
+      const h = new Headers(r.headers); h.set('Access-Control-Allow-Origin', '*');
+      return new Response(r.body, { status: r.status, headers: h });
+    }
     return env.ASSETS.fetch(request);
   },
 };
