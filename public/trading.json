@@ -7,7 +7,7 @@
       "phase": "Phase 1",
       "started": "2026-09-26",
       "target": 10,
-      "progress": 2.47,
+      "progress": 2.75,
       "daily_loss": 3,
       "max_dd": 10,
       "note": "No time limit"
@@ -19,7 +19,7 @@
       "phase": "Funded",
       "started": "2026-10-27",
       "target": null,
-      "progress": 1.15,
+      "progress": 1.93,
       "daily_loss": 8,
       "max_dd": 8,
       "note": "Fixed drawdown · 80% profit split"
@@ -131,6 +131,28 @@
       "r_multiple": null,
       "lesson": "Gold dropped all day and I got stuck badly. Both accounts went over 0.5 lots open. The evening spike up let me recover into a small profit. Thankful.",
       "screenshot": "img/trading/2026-11-03-fxify.jpg"
+    },
+    {
+      "date": "2026-11-04",
+      "account": "5ers",
+      "result_pct": 0.27,
+      "trades": 13,
+      "rules_kept": 4,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "Green on both accounts. Smaller lots and patient entries after yesterday's over-exposure.",
+      "screenshot": "img/trading/2026-11-04-5ers.jpg"
+    },
+    {
+      "date": "2026-11-04",
+      "account": "fxify",
+      "result_pct": 0.8,
+      "trades": 31,
+      "rules_kept": 4,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "Green on both accounts. Smaller lots and patient entries after yesterday's over-exposure.",
+      "screenshot": "img/trading/2026-11-04-fxify.jpg"
     }
   ]
 }
