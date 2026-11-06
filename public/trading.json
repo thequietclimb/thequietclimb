@@ -7,7 +7,7 @@
       "phase": "Phase 1",
       "started": "2026-09-26",
       "target": 10,
-      "progress": 2.75,
+      "progress": 2.96,
       "daily_loss": 3,
       "max_dd": 10,
       "note": "No time limit"
@@ -19,7 +19,7 @@
       "phase": "Funded",
       "started": "2026-10-27",
       "target": null,
-      "progress": 1.93,
+      "progress": 2.34,
       "daily_loss": 8,
       "max_dd": 8,
       "note": "Fixed drawdown · 80% profit split"
@@ -153,6 +153,28 @@
       "r_multiple": null,
       "lesson": "Green on both accounts. Smaller lots and patient entries after yesterday's over-exposure.",
       "screenshot": "img/trading/2026-11-04-fxify.jpg"
+    },
+    {
+      "date": "2026-11-05",
+      "account": "5ers",
+      "result_pct": 0.09,
+      "trades": 2,
+      "rules_kept": 4,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "Gold dropped fast around 7:40 and I had too much open on FXIFY. Recovered into profit, but size has to stay under 0.5.",
+      "screenshot": "img/trading/2026-11-05-5ers.jpg"
+    },
+    {
+      "date": "2026-11-05",
+      "account": "fxify",
+      "result_pct": 0.4,
+      "trades": 23,
+      "rules_kept": 3,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "Gold dropped fast around 7:40 and I had too much open on FXIFY. Recovered into profit, but size has to stay under 0.5.",
+      "screenshot": "img/trading/2026-11-05-fxify.jpg"
     }
   ]
 }
