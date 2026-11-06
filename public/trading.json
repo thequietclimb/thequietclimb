@@ -7,7 +7,7 @@
       "phase": "Phase 1",
       "started": "2026-09-26",
       "target": 10,
-      "progress": 2.96,
+      "progress": 3.06,
       "daily_loss": 3,
       "max_dd": 10,
       "note": "No time limit"
@@ -19,7 +19,7 @@
       "phase": "Funded",
       "started": "2026-10-27",
       "target": null,
-      "progress": 2.34,
+      "progress": 2.82,
       "daily_loss": 8,
       "max_dd": 8,
       "note": "Fixed drawdown · 80% profit split"
@@ -175,6 +175,28 @@
       "r_multiple": null,
       "lesson": "Gold was trending and with the elections, the market is unstable. Good to come out green.",
       "screenshot": "img/trading/2026-11-05-fxify.jpg"
+    },
+    {
+      "date": "2026-11-06",
+      "account": "5ers",
+      "result_pct": 0.22,
+      "trades": 13,
+      "rules_kept": 4,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "Green on both accounts. It's Friday, so I called it an early night. No point holding risk into the weekend.",
+      "screenshot": "img/trading/2026-11-06-5ers.jpg"
+    },
+    {
+      "date": "2026-11-06",
+      "account": "fxify",
+      "result_pct": 0.48,
+      "trades": 21,
+      "rules_kept": 4,
+      "rules_total": 4,
+      "r_multiple": null,
+      "lesson": "Green on both accounts. It's Friday, so I called it an early night. No point holding risk into the weekend.",
+      "screenshot": "img/trading/2026-11-06-fxify.jpg"
     }
   ]
 }
