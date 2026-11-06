@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content by Kev | China-ready content for Singapore tourism</title>
+<meta name="description" content="China-ready content for Singapore tourism businesses. 12 short posts a month in English and Chinese for Instagram, TikTok and Xiaohongshu.">
+<link rel="canonical" href="https://thequietclimbsg.com/contentbykev">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f2ea; --surface:#fffdf9; --ink:#1d1a16; --muted:#6e665b;
+    --line:#e6ddcf; --accent:#c4642a; --accent-ink:#fff; --deep:#1b1712; --deep-ink:#f3ebe0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14110e; --surface:#1d1915; --ink:#f2ebe1; --muted:#a89d8f;
+      --line:#2e2822; --accent:#e0864c; --accent-ink:#14110e; --deep:#0e0c0a; --deep-ink:#f2ebe1;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:17px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  em{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:400}
+
+  header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-family:Fraunces,serif;font-weight:600;font-size:18px;text-decoration:none}
+  nav{display:flex;gap:22px;font-size:15px}
+  nav a{text-decoration:none;color:var(--muted)}
+  nav a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:60px 0}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px}
+  .hero h1{font-size:clamp(40px,6.4vw,66px);margin-bottom:20px}
+  .hero p{color:var(--muted);font-size:19px;max-width:28em;margin-bottom:28px}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero img{border-radius:24px;aspect-ratio:1/1;object-fit:cover;box-shadow:0 24px 60px rgba(0,0,0,.15)}
+
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  section h2{font-size:clamp(30px,4.4vw,42px);margin-bottom:14px}
+  .lead{color:var(--muted);max-width:36em;margin-bottom:34px}
+
+  .story{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:start}
+  .story p{margin-bottom:16px;max-width:34em}
+  .story img{border-radius:20px;aspect-ratio:4/5;object-fit:cover}
+
+  .timeline{list-style:none;position:relative;padding-left:28px;max-width:640px}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .timeline li{position:relative;margin-bottom:26px}
+  .timeline li::before{content:"";position:absolute;left:-27px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+  .timeline li.next::before{background:var(--bg);border:2px solid var(--accent)}
+  .timeline .when{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .timeline b{display:block;font-size:18px;margin:2px 0}
+  .timeline span{color:var(--muted);font-size:16px}
+
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column}
+  .card .status{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:10px}
+  .card h3{font-size:22px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px;flex:1;margin-bottom:16px}
+  .card a{font-weight:600;font-size:15px;text-decoration:none;color:var(--accent)}
+
+  .socials{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px}
+  .social{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px;text-decoration:none}
+  .social svg{width:28px;height:28px;flex:none}
+  .social b{display:block}
+  .social span{color:var(--muted);font-size:14px}
+
+  .join{background:var(--deep);color:var(--deep-ink);border-radius:28px;padding:56px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin:64px 0}
+  .join h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+  .join p{opacity:.75}
+  .join form{display:flex;gap:10px;flex-wrap:wrap}
+  .join input{flex:1;min-width:200px;padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:inherit;font:inherit;font-size:15px}
+  .join input::placeholder{color:rgba(243,235,224,.55)}
+  .join small{display:block;margin-top:12px;opacity:.6;font-size:13px}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    nav{display:none}
+    .hero{grid-template-columns:1fr;gap:32px;padding-top:36px}
+    .hero img{order:-1;max-width:420px}
+    .story{grid-template-columns:1fr}
+    .story img{max-width:320px}
+    .projects{grid-template-columns:1fr}
+    .join{grid-template-columns:1fr;padding:40px 24px}
+  }
+  @media (max-width:520px){ .socials{grid-template-columns:1fr} }
+
+  .score{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .stat .k{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .stat .v{font-family:Fraunces,Georgia,serif;font-size:32px;font-weight:600;margin-top:4px}
+  .empty{background:var(--surface);border:1px dashed var(--line);border-radius:18px;padding:28px;color:var(--muted)}
+  .entry{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;margin-bottom:18px}
+  .entry .when{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .entry h3{font-size:24px;margin:6px 0 10px}
+  .entry p{color:var(--muted);margin-bottom:12px}
+  .shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+  .shots img{border-radius:12px;border:1px solid var(--line);cursor:zoom-in}
+  .more{display:inline-block;margin-top:6px;font-weight:600;color:var(--accent);text-decoration:none}
+  @media (max-width:560px){.score{grid-template-columns:1fr}}
+
+  .hero2{padding:40px 0 10px}
+  .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .hero2 h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(38px,6vw,60px);line-height:1.05;margin:10px 0 12px}
+  .hero2 .sub{font-size:20px;color:var(--muted);max-width:640px}
+  .zh{font-family:"Noto Sans SC","PingFang SC",sans-serif}
+  .note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:14px;padding:18px 22px;margin:26px 0;color:var(--ink)}
+  .block{margin:44px 0}.block h2{font-family:Fraunces,Georgia,serif;font-size:30px;font-weight:600;margin-bottom:12px}
+  .block p,.block li{color:var(--muted)}.block ul{margin-left:20px}.block li{margin:6px 0}
+  .samples{display:grid;gap:14px}.sample{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .sample b{display:block;font-size:17px;margin-bottom:6px;color:var(--ink)}.sample p{margin:4px 0}
+  .price{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.p{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .p .amt{font-family:Fraunces,Georgia,serif;font-size:30px;font-weight:600;color:var(--ink)}.p .who{font-weight:600;color:var(--ink);margin-top:2px}.p .what{color:var(--muted);font-size:15px;margin-top:4px}
+  .steps{counter-reset:s;display:grid;gap:12px}.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 22px 18px 64px;position:relative}
+  .step:before{counter-increment:s;content:counter(s);position:absolute;left:22px;top:16px;font-family:Fraunces,Georgia,serif;font-size:28px;color:var(--accent);font-weight:600}
+  .step b{color:var(--ink)}
+  .contact{background:var(--deep);color:var(--deep-ink);border-radius:20px;padding:30px;margin:50px 0}
+  .contact h2{font-family:Fraunces,Georgia,serif;font-size:30px;font-weight:600}.contact p{opacity:.85;margin-top:8px}.contact a{color:inherit}
+  @media (max-width:620px){.price{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="/">The Quiet Climb</a>
+    <nav><a href="/#story">Story</a><a href="/#journey">Journey</a><a href="/#projects">Projects</a><a href="/trading">Trading</a><a href="/journal">Journal</a></nav>
+    <a class="btn" href="mailto:contentbykev@gmail.com?subject=Content%20by%20Kev" style="padding:8px 16px;font-size:14px">Contact</a>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero2" style="border-top:0">
+    <div class="eyebrow">Content by Kev</div>
+    <h1>China-ready content for Singapore tourism</h1>
+    <p class="sub">English &amp; Chinese. 12 short posts a month for Instagram, TikTok and Xiaohongshu.</p>
+    <div class="note"><b>Honest status, up front:</b> Content by Kev is new, in its first paid-trial test in November 2026. No paid clients, no revenue and no testimonials yet. This page shows checkable work and samples instead of claims.</div>
+  </section>
+
+  <section class="block">
+    <h2>Who</h2>
+    <p>Kev L, Singapore. Bilingual in English and Chinese, and a local dad who plans trips for visiting families. Five years as a B2B sales trainer, with top awards, coaching 100+ people. He documents his climb at <a href="/">thequietclimbsg.com</a>.</p>
+  </section>
+
+  <section class="block">
+    <h2>Proof you can check</h2>
+    <p>Kev runs <a href="https://pocketlocalsg.com">Pocket Local</a>: personal Singapore trip planning for visiting families, in English and Chinese, at S$129 / S$269 / S$399. Its planning-only model was checked with STB and passed. Pocket Local is new, with no customers yet as of 6 Nov 2026. It is the live demo for this content work.</p>
+  </section>
+
+  <section class="block">
+    <h2>What we do</h2>
+    <ul>
+      <li>12 short posts and videos a month, in English and Chinese, for Instagram, TikTok and Xiaohongshu</li>
+      <li>For hotels, attractions, food and drink, and tour operators who want Chinese tourists</li>
+      <li>We research the gap, script, and make the content. The client approves before anything is posted.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Sample ideas</h2>
+    <p style="margin-bottom:14px">Samples only. These are not clients, and we are not affiliated with these businesses.</p>
+    <div class="samples">
+      <div class="sample"><b>Tribe Tours</b><p>Your great-grandfather arrived like this. Follow a 1910 coolie through Chinatown.</p><p class="zh">1910年，你的祖辈就是这样来到新加坡的。跟着苦力走一遍牛车水。</p></div>
+      <div class="sample"><b>Hotel NuVe Heritage</b><p>One family suite for four, five minutes from Bugis MRT.</p><p class="zh">一家四口住一间房，离武吉士地铁站只要五分钟。</p></div>
+      <div class="sample"><b>Mei Heong Yuen Dessert</b><p>Mango snow ice in Chinatown, from a shop that has been there since 1950.</p><p class="zh">牛车水一碗芒果绵绵冰，1950年的老字号。</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Start with a paid trial</h2>
+    <div class="price">
+      <div class="p"><div class="amt">S$290</div><div class="who">Small food and drink</div><div class="what">1 week, 4 posts, paid upfront</div></div>
+      <div class="p"><div class="amt">S$450</div><div class="who">Tours and experiences</div><div class="what">1 week, 4 posts, paid upfront</div></div>
+      <div class="p"><div class="amt">S$650</div><div class="who">Hotels</div><div class="what">1 week, 4 posts, paid upfront</div></div>
+      <div class="p"><div class="amt">From S$1,500<span style="font-size:18px">/month</span></div><div class="who">Retainer, after the trial works</div><div class="what">12 posts a month. No long contract to start.</div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><b>Gap.</b> One short audit: where Chinese tourists search and do not find you.</div>
+      <div class="step"><b>Trial.</b> You approve the scripts, we make 4 posts, you post them on your accounts.</div>
+      <div class="step"><b>Decide.</b> After one week, take the retainer, or stop. No long contract.</div>
+    </div>
+  </section>
+
+  <div class="contact">
+    <h2>Talk to Kev</h2>
+    <p>Kev L, Content by Kev, Singapore · <a href="mailto:contentbykev@gmail.com">contentbykev@gmail.com</a></p>
+    <p>Proof: <a href="/">thequietclimbsg.com</a> · <a href="https://pocketlocalsg.com">pocketlocalsg.com</a></p>
+    <p>No hype, no promises of views or bookings. We make the content Chinese tourists actually search for.</p>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Content by Kev · Kev L</span>
+    <a href="mailto:contentbykev@gmail.com">contentbykev@gmail.com</a>
+  </div>
+</footer>
+</body>
+</html>
