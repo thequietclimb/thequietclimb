@@ -87,7 +87,9 @@
   footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   @media (max-width:860px){
-    nav{display:none}
+    header .wrap{flex-wrap:wrap;height:auto;padding-top:10px}
+    nav{display:flex;order:3;width:100%;overflow-x:auto;gap:13px;padding:6px 0 10px;font-size:13.5px;white-space:nowrap;scrollbar-width:none}
+    nav::-webkit-scrollbar{display:none}
     .hero{grid-template-columns:1fr;gap:32px;padding-top:36px}
     .hero img{order:-1;max-width:420px}
     .story{grid-template-columns:1fr}
