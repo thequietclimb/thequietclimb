@@ -1,5 +1,46 @@
 [
  {
+  "slug": "prawn-noodle-how-to-order",
+  "date": "2026-11-09",
+  "title": "How to order prawn noodle like a Singaporean",
+  "title_zh": "新加坡虾面怎么点才地道",
+  "summary": "Soup or dry, pick your noodle, and how a local orders it. Plus the free soup top-up most stalls give.",
+  "images": [
+   "/mnt/user-data/outputs/pl/pl-prawn-noodle-1.jpg",
+   "/mnt/user-data/outputs/pl/pl-prawn-noodle-2.jpg",
+   "/mnt/user-data/outputs/pl/pl-prawn-noodle-3.jpg",
+   "/mnt/user-data/outputs/pl/pl-prawn-noodle-4.jpg",
+   "/mnt/user-data/outputs/pl/pl-prawn-noodle-5.jpg",
+   "/mnt/user-data/outputs/pl/pl-prawn-noodle-6.jpg",
+   "/mnt/user-data/outputs/pl/pl-prawn-noodle-7.jpg"
+  ],
+  "alt": "Pocket Local guide slide: how to order prawn noodle in Singapore",
+  "instagram": "https://www.instagram.com/pocketlocal.sg/p/DfhS7Evmmzh/",
+  "sections": [
+   [
+    "First · Soup or dry?",
+    "Dry comes tossed in chilli sauce or ketchup, with the soup on the side. Either way, the rich prawn broth is the whole point."
+   ],
+   [
+    "Then · Pick your noodle",
+    "Thick yellow noodle, bee hoon, or kuey tiao (the flat white noodle). You can mix, e.g. bee hoon + noodle."
+   ],
+   [
+    "My order",
+    "Dry, yellow noodle / bee hoon, no chilli, no bean sprouts. That's my taste. Most Singaporeans like chilli."
+   ],
+   [
+    "Tip · Soup top-up",
+    "Most stalls will top up your soup once. Ask more than once and you might get a stare."
+   ],
+   [
+    "Where to go",
+    "You'll find a good one at most hawker centres."
+   ]
+  ],
+  "credits": ""
+ },
+ {
   "slug": "rainy-day-mrt-malls",
   "date": "2026-11-06",
   "title": "Rainy day cheat sheet: MRT stations with a mall right there",
