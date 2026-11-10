@@ -1,202 +1,224 @@
 {
-  "accounts": [
-    {
-      "id": "5ers",
-      "name": "The5ers 100K",
-      "type": "Challenge",
-      "phase": "Phase 1",
-      "started": "2026-09-26",
-      "target": 10,
-      "progress": 3.06,
-      "daily_loss": 3,
-      "max_dd": 10,
-      "note": "No time limit"
-    },
-    {
-      "id": "fxify",
-      "name": "FXIFY 50K",
-      "type": "Instant funding",
-      "phase": "Funded",
-      "started": "2026-10-27",
-      "target": null,
-      "progress": 2.82,
-      "daily_loss": 8,
-      "max_dd": 8,
-      "note": "Fixed drawdown · 80% profit split"
-    }
-  ],
-  "rules": [
-    "No martingale. I never double up my lot size to win back a loss.",
-    "Be patient. Wait for a good entry point, not just any entry.",
-    "Trade a lot size that doesn't stress me: I can enter, set my take profit and put my phone down without worrying the account might blow.",
-    "Don't over-expose. Max lots open at once: 0.3 to 0.5 on each account, depending on market conditions. Recovery entries count too."
-  ],
-  "verified_url": null,
-  "days": [
-    {
-      "date": "2026-10-26",
-      "account": "5ers",
-      "result_pct": 0.55,
-      "trades": 8,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "One trade went against me, so I added 2 recovery entries lower and closed all three together once the group was in profit. It worked today, but adding to a losing trade raises the risk, so I need to keep it within my daily loss limit.",
-      "screenshot": "img/trading/2026-10-26-5ers.jpg"
-    },
-    {
-      "date": "2026-10-27",
-      "account": "5ers",
-      "result_pct": 0.25,
-      "trades": 4,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Waited for a retracement that hardly came. No forced trades.",
-      "screenshot": "img/trading/2026-10-27-5ers.jpg"
-    },
-    {
-      "date": "2026-10-28",
-      "account": "5ers",
-      "result_pct": 0.37,
-      "trades": 5,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Small, steady steps. It's never about the big flashy wins.",
-      "screenshot": "img/trading/2026-10-28-5ers.jpg"
-    },
-    {
-      "date": "2026-10-29",
-      "account": "5ers",
-      "result_pct": 0.66,
-      "trades": 10,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "FOMC day, so the market was very volatile. Without discipline, the account would surely be in danger.",
-      "screenshot": "img/trading/2026-10-29-5ers.jpg"
-    },
-    {
-      "date": "2026-10-30",
-      "account": "5ers",
-      "result_pct": -2.58,
-      "trades": 11,
-      "rules_kept": 3,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Toughest day yet, and I'm still in the game. I found my exact weak spot: adding buys on the way down. Now I know where my limit is, and that lesson is worth more than today's loss.",
-      "screenshot": "img/trading/2026-10-30-5ers.jpg"
-    },
-    {
-      "date": "2026-11-02",
-      "account": "5ers",
-      "result_pct": 0.19,
-      "trades": 11,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Green on both accounts. Mostly small, clean buys and a lot of waiting for the right entry.",
-      "screenshot": "img/trading/2026-11-02-5ers.jpg"
-    },
-    {
-      "date": "2026-11-02",
-      "account": "fxify",
-      "result_pct": 0.58,
-      "trades": 14,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Green on both accounts. Mostly small, clean buys and a lot of waiting for the right entry.",
-      "screenshot": "img/trading/2026-11-02-fxify.jpg"
-    },
-    {
-      "date": "2026-11-03",
-      "account": "5ers",
-      "result_pct": 0.17,
-      "trades": 13,
-      "rules_kept": 3,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Gold dropped all day and I got stuck badly. Both accounts went over 0.5 lots open. The evening spike up let me recover into a small profit. Thankful.",
-      "screenshot": "img/trading/2026-11-03-5ers.jpg"
-    },
-    {
-      "date": "2026-11-03",
-      "account": "fxify",
-      "result_pct": 0.54,
-      "trades": 41,
-      "rules_kept": 3,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Gold dropped all day and I got stuck badly. Both accounts went over 0.5 lots open. The evening spike up let me recover into a small profit. Thankful.",
-      "screenshot": "img/trading/2026-11-03-fxify.jpg"
-    },
-    {
-      "date": "2026-11-04",
-      "account": "5ers",
-      "result_pct": 0.27,
-      "trades": 13,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Green on both accounts. Smaller lots and patient entries after yesterday's over-exposure.",
-      "screenshot": "img/trading/2026-11-04-5ers.jpg"
-    },
-    {
-      "date": "2026-11-04",
-      "account": "fxify",
-      "result_pct": 0.8,
-      "trades": 31,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Green on both accounts. Smaller lots and patient entries after yesterday's over-exposure.",
-      "screenshot": "img/trading/2026-11-04-fxify.jpg"
-    },
-    {
-      "date": "2026-11-05",
-      "account": "5ers",
-      "result_pct": 0.09,
-      "trades": 2,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Gold was trending and with the elections, the market is unstable. Good to come out green.",
-      "screenshot": "img/trading/2026-11-05-5ers.jpg"
-    },
-    {
-      "date": "2026-11-05",
-      "account": "fxify",
-      "result_pct": 0.4,
-      "trades": 23,
-      "rules_kept": 3,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Gold was trending and with the elections, the market is unstable. Good to come out green.",
-      "screenshot": "img/trading/2026-11-05-fxify.jpg"
-    },
-    {
-      "date": "2026-11-06",
-      "account": "5ers",
-      "result_pct": 0.22,
-      "trades": 13,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Green on both accounts. It's Friday, so I called it an early night. No point holding risk into the weekend.",
-      "screenshot": "img/trading/2026-11-06-5ers.jpg"
-    },
-    {
-      "date": "2026-11-06",
-      "account": "fxify",
-      "result_pct": 0.48,
-      "trades": 21,
-      "rules_kept": 4,
-      "rules_total": 4,
-      "r_multiple": null,
-      "lesson": "Green on both accounts. It's Friday, so I called it an early night. No point holding risk into the weekend.",
-      "screenshot": "img/trading/2026-11-06-fxify.jpg"
-    }
-  ]
+ "accounts": [
+  {
+   "id": "5ers",
+   "name": "The5ers 100K",
+   "type": "Challenge",
+   "phase": "Phase 1",
+   "started": "2026-09-26",
+   "target": 10,
+   "progress": 3.2,
+   "daily_loss": 3,
+   "max_dd": 10,
+   "note": "No time limit"
+  },
+  {
+   "id": "fxify",
+   "name": "FXIFY 50K",
+   "type": "Instant funding",
+   "phase": "Funded",
+   "started": "2026-10-27",
+   "target": null,
+   "progress": 3.15,
+   "daily_loss": 8,
+   "max_dd": 8,
+   "note": "Fixed drawdown · 80% profit split"
+  }
+ ],
+ "rules": [
+  "No martingale. I never double up my lot size to win back a loss.",
+  "Be patient. Wait for a good entry point, not just any entry.",
+  "Trade a lot size that doesn't stress me: I can enter, set my take profit and put my phone down without worrying the account might blow.",
+  "Don't over-expose. Max lots open at once: 0.3 to 0.5 on each account, depending on market conditions. Recovery entries count too."
+ ],
+ "verified_url": null,
+ "days": [
+  {
+   "date": "2026-10-26",
+   "account": "5ers",
+   "result_pct": 0.55,
+   "trades": 8,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "One trade went against me, so I added 2 recovery entries lower and closed all three together once the group was in profit. It worked today, but adding to a losing trade raises the risk, so I need to keep it within my daily loss limit.",
+   "screenshot": "img/trading/2026-10-26-5ers.jpg"
+  },
+  {
+   "date": "2026-10-27",
+   "account": "5ers",
+   "result_pct": 0.25,
+   "trades": 4,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Waited for a retracement that hardly came. No forced trades.",
+   "screenshot": "img/trading/2026-10-27-5ers.jpg"
+  },
+  {
+   "date": "2026-10-28",
+   "account": "5ers",
+   "result_pct": 0.37,
+   "trades": 5,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Small, steady steps. It's never about the big flashy wins.",
+   "screenshot": "img/trading/2026-10-28-5ers.jpg"
+  },
+  {
+   "date": "2026-10-29",
+   "account": "5ers",
+   "result_pct": 0.66,
+   "trades": 10,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "FOMC day, so the market was very volatile. Without discipline, the account would surely be in danger.",
+   "screenshot": "img/trading/2026-10-29-5ers.jpg"
+  },
+  {
+   "date": "2026-10-30",
+   "account": "5ers",
+   "result_pct": -2.58,
+   "trades": 11,
+   "rules_kept": 3,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Toughest day yet, and I'm still in the game. I found my exact weak spot: adding buys on the way down. Now I know where my limit is, and that lesson is worth more than today's loss.",
+   "screenshot": "img/trading/2026-10-30-5ers.jpg"
+  },
+  {
+   "date": "2026-11-02",
+   "account": "5ers",
+   "result_pct": 0.19,
+   "trades": 11,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Green on both accounts. Mostly small, clean buys and a lot of waiting for the right entry.",
+   "screenshot": "img/trading/2026-11-02-5ers.jpg"
+  },
+  {
+   "date": "2026-11-02",
+   "account": "fxify",
+   "result_pct": 0.58,
+   "trades": 14,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Green on both accounts. Mostly small, clean buys and a lot of waiting for the right entry.",
+   "screenshot": "img/trading/2026-11-02-fxify.jpg"
+  },
+  {
+   "date": "2026-11-03",
+   "account": "5ers",
+   "result_pct": 0.17,
+   "trades": 13,
+   "rules_kept": 3,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Gold dropped all day and I got stuck badly. Both accounts went over 0.5 lots open. The evening spike up let me recover into a small profit. Thankful.",
+   "screenshot": "img/trading/2026-11-03-5ers.jpg"
+  },
+  {
+   "date": "2026-11-03",
+   "account": "fxify",
+   "result_pct": 0.54,
+   "trades": 41,
+   "rules_kept": 3,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Gold dropped all day and I got stuck badly. Both accounts went over 0.5 lots open. The evening spike up let me recover into a small profit. Thankful.",
+   "screenshot": "img/trading/2026-11-03-fxify.jpg"
+  },
+  {
+   "date": "2026-11-04",
+   "account": "5ers",
+   "result_pct": 0.27,
+   "trades": 13,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Green on both accounts. Smaller lots and patient entries after yesterday's over-exposure.",
+   "screenshot": "img/trading/2026-11-04-5ers.jpg"
+  },
+  {
+   "date": "2026-11-04",
+   "account": "fxify",
+   "result_pct": 0.8,
+   "trades": 31,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Green on both accounts. Smaller lots and patient entries after yesterday's over-exposure.",
+   "screenshot": "img/trading/2026-11-04-fxify.jpg"
+  },
+  {
+   "date": "2026-11-05",
+   "account": "5ers",
+   "result_pct": 0.09,
+   "trades": 2,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Gold was trending and with the elections, the market is unstable. Good to come out green.",
+   "screenshot": "img/trading/2026-11-05-5ers.jpg"
+  },
+  {
+   "date": "2026-11-05",
+   "account": "fxify",
+   "result_pct": 0.4,
+   "trades": 23,
+   "rules_kept": 3,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Gold was trending and with the elections, the market is unstable. Good to come out green.",
+   "screenshot": "img/trading/2026-11-05-fxify.jpg"
+  },
+  {
+   "date": "2026-11-06",
+   "account": "5ers",
+   "result_pct": 0.22,
+   "trades": 13,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Green on both accounts. It's Friday, so I called it an early night. No point holding risk into the weekend.",
+   "screenshot": "img/trading/2026-11-06-5ers.jpg"
+  },
+  {
+   "date": "2026-11-06",
+   "account": "fxify",
+   "result_pct": 0.48,
+   "trades": 21,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "Green on both accounts. It's Friday, so I called it an early night. No point holding risk into the weekend.",
+   "screenshot": "img/trading/2026-11-06-fxify.jpg"
+  },
+  {
+   "date": "2026-11-09",
+   "account": "5ers",
+   "result_pct": 0.13,
+   "trades": 5,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "",
+   "screenshot": "img/trading/2026-11-09-5ers.jpg"
+  },
+  {
+   "date": "2026-11-09",
+   "account": "fxify",
+   "result_pct": 0.3,
+   "trades": 14,
+   "rules_kept": 4,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "",
+   "screenshot": "img/trading/2026-11-09-fxify.jpg"
+  }
+ ]
 }
