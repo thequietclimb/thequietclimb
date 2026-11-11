@@ -7,7 +7,7 @@
    "phase": "Phase 1",
    "started": "2026-09-26",
    "target": 10,
-   "progress": 3.2,
+   "progress": 1.35,
    "daily_loss": 3,
    "max_dd": 10,
    "note": "No time limit"
@@ -19,7 +19,7 @@
    "phase": "Funded",
    "started": "2026-10-27",
    "target": null,
-   "progress": 3.15,
+   "progress": 3.54,
    "daily_loss": 8,
    "max_dd": 8,
    "note": "Fixed drawdown · 80% profit split"
@@ -219,6 +219,28 @@
    "r_multiple": null,
    "lesson": "",
    "screenshot": "img/trading/2026-11-09-fxify.jpg"
+  },
+  {
+   "date": "2026-11-10",
+   "account": "5ers",
+   "result_pct": -1.78,
+   "trades": 14,
+   "rules_kept": 3,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "",
+   "screenshot": "img/trading/2026-11-10-5ers.jpg"
+  },
+  {
+   "date": "2026-11-10",
+   "account": "fxify",
+   "result_pct": 0.38,
+   "trades": null,
+   "rules_kept": 3,
+   "rules_total": 4,
+   "r_multiple": null,
+   "lesson": "",
+   "screenshot": "img/trading/2026-11-10-fxify.jpg"
   }
  ]
 }

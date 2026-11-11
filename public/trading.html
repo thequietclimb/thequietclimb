@@ -227,7 +227,7 @@ fetch('trading.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
     const chips=document.createElement('div'); chips.className='chips';
     const add=t=>{const s=document.createElement('span');s.className='chip';s.textContent=t;chips.appendChild(s);};
     if(x.account&&names[x.account]) add(names[x.account]);
-    add(x.trades+' trade'+(x.trades===1?'':'s'));
+    if(x.trades) add(x.trades+' trade'+(x.trades===1?'':'s'));
     if(x.rules_total) add((x.rules_kept===x.rules_total?'✅ ':'⚠️ ')+'Rules '+x.rules_kept+'/'+x.rules_total);
     if(x.r_multiple!=null) add((x.r_multiple>0?'+':'')+x.r_multiple+'R');
     left.appendChild(chips);
