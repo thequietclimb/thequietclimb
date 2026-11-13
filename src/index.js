@@ -22,6 +22,9 @@ export default {
         const page = new URL('/pocketlocal', url);
         return env.ASSETS.fetch(new Request(page.toString(), request));
       }
+      if (url.pathname === '/check') {
+        return Response.redirect('https://pocketlocalsg.com/#check', 302);
+      }
       if (url.pathname === '/pocketlocal' || url.pathname === '/pocketlocal.html') {
         return Response.redirect('https://pocketlocalsg.com/', 301);
       }
