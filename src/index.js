@@ -1,5 +1,6 @@
 // Serves the Pocket Local page at the root of pocketlocalsg.com; everything else is static assets.
 const PL_HOSTS = new Set(['pocketlocalsg.com', 'www.pocketlocalsg.com']);
+const PL_PAGES = new Set(['/about', '/privacy', '/terms', '/refunds']);
 
 export default {
   async fetch(request, env) {
@@ -22,6 +23,12 @@ export default {
         const page = new URL('/pocketlocal', url);
         return env.ASSETS.fetch(new Request(page.toString(), request));
       }
+      if (PL_PAGES.has(url.pathname)) {
+        return env.ASSETS.fetch(new Request(new URL('/pl' + url.pathname, url).toString(), request));
+      }
+      if (url.pathname.startsWith('/pl/')) {
+        return Response.redirect('https://pocketlocalsg.com' + url.pathname.slice(3).replace(/\.html$/, ''), 301);
+      }
       if (url.pathname === '/check') {
         return Response.redirect('https://pocketlocalsg.com/#check', 302);
       }
@@ -34,6 +41,9 @@ export default {
     }
     if (url.hostname.endsWith('thequietclimbsg.com') && (url.pathname === '/pocketlocal' || url.pathname === '/pocketlocal.html' || url.pathname === '/itix' || url.pathname === '/itix.html')) {
       return Response.redirect('https://pocketlocalsg.com/' + url.search, 301);
+    }
+    if (url.hostname.endsWith('thequietclimbsg.com') && url.pathname.startsWith('/pl/')) {
+      return Response.redirect('https://pocketlocalsg.com' + url.pathname.slice(3).replace(/\.html$/, ''), 301);
     }
     if (url.pathname.startsWith('/share/')) {
       const r = await env.ASSETS.fetch(request);

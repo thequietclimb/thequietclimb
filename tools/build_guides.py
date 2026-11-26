@@ -20,8 +20,8 @@ for g in G:
             im = Image.open(src).convert('RGB'); im.thumbnail((1080, 1350)); im.save(out, quality=84, optimize=True, progressive=True)
         g['imgs'].append(f'/guides/{g["slug"]}/{i}.jpg')
 
-CSS = """:root{--bg:#f5f6fa;--surface:#fff;--ink:#141c2b;--muted:#5d6678;--line:#dfe3ec;--accent:#1f3d73;--accent-ink:#fff;--warm:#b7791f}
-@media (prefers-color-scheme:dark){:root{--bg:#0d1320;--surface:#151d2e;--ink:#eaeef6;--muted:#9aa6bc;--line:#263149;--accent:#f5b93e;--accent-ink:#14284b;--warm:#f5b93e}}
+CSS = """:root{--bg:#ffffff;--surface:#fff;--ink:#193447;--muted:#56656f;--line:#e7e2d8;--accent:#4d827d;--accent-ink:#fff;--warm:#c98768}
+
 *{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--ink);font:17px/1.65 Inter,"Noto Sans SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}.wrap{max-width:820px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:2}header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
@@ -84,9 +84,10 @@ if '<!--GUIDES-->' in s:
 else:
     s = s.replace('  <section id="how">', section + '\n\n  <section id="how">', 1)
 open(p, 'w').write(s)
-urls = [SITE + '/', SITE + '/free'] + [f'{SITE}/guides/{g["slug"]}' for g in G]
+urls = [SITE + '/', SITE + '/about', SITE + '/free'] + [f'{SITE}/guides/{g["slug"]}' for g in G]
 # keep stand-alone guide pages (not built from guides.json) in the sitemap
 import glob
 urls += sorted(f'{SITE}/guides/' + os.path.basename(f)[:-5] for f in glob.glob(os.path.join(PUB, 'guides', '*.html')) if f'{SITE}/guides/' + os.path.basename(f)[:-5] not in urls)
+urls += [SITE + '/privacy', SITE + '/terms', SITE + '/refunds']
 open(os.path.join(PUB, 'pl-sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{u}</loc></url>\n' for u in urls) + '</urlset>\n')
 print('built', [g['slug'] for g in G])
