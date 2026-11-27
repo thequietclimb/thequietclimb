@@ -1,6 +1,6 @@
 // Serves the Pocket Local page at the root of pocketlocalsg.com; everything else is static assets.
 const PL_HOSTS = new Set(['pocketlocalsg.com', 'www.pocketlocalsg.com']);
-const PL_PAGES = new Set(['/about', '/privacy', '/terms', '/refunds']);
+const PL_PAGES = new Set(['/about', '/privacy', '/terms', '/refunds', '/check']);
 
 export default {
   async fetch(request, env) {
@@ -28,9 +28,6 @@ export default {
       }
       if (url.pathname.startsWith('/pl/')) {
         return Response.redirect('https://pocketlocalsg.com' + url.pathname.slice(3).replace(/\.html$/, ''), 301);
-      }
-      if (url.pathname === '/check') {
-        return Response.redirect('https://pocketlocalsg.com/#check', 302);
       }
       if (url.pathname === '/pocketlocal' || url.pathname === '/pocketlocal.html') {
         return Response.redirect('https://pocketlocalsg.com/', 301);

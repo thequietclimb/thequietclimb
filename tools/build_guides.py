@@ -88,6 +88,6 @@ urls = [SITE + '/', SITE + '/about', SITE + '/free'] + [f'{SITE}/guides/{g["slug
 # keep stand-alone guide pages (not built from guides.json) in the sitemap
 import glob
 urls += sorted(f'{SITE}/guides/' + os.path.basename(f)[:-5] for f in glob.glob(os.path.join(PUB, 'guides', '*.html')) if f'{SITE}/guides/' + os.path.basename(f)[:-5] not in urls)
-urls += [SITE + '/privacy', SITE + '/terms', SITE + '/refunds']
+urls += [SITE + '/check', SITE + '/privacy', SITE + '/terms', SITE + '/refunds']
 open(os.path.join(PUB, 'pl-sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{u}</loc></url>\n' for u in urls) + '</urlset>\n')
 print('built', [g['slug'] for g in G])
