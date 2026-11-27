@@ -45,7 +45,7 @@ main p,main li{margin-bottom:12px}main ul{padding-left:22px}
 .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 8px}
 .price{display:inline-block;background:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-weight:600;font-size:15px;margin-bottom:6px}
-ol.steps{padding-left:22px}ol.steps li{margin-bottom:10px}
+ol.steps{padding-left:22px}form.box label{display:block;font-weight:600;font-size:15px;margin-bottom:14px}form.box input,form.box textarea{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-weight:400}ol.steps li{margin-bottom:10px}
 footer{background:#122838;color:rgba(255,255,255,.75);padding:34px 0;font-size:14px;margin-top:60px}
 footer a{color:rgba(255,255,255,.88);text-decoration:none;margin-right:14px}footer a:hover{text-decoration:underline}
 footer .wrap{max-width:1080px}
@@ -151,7 +151,7 @@ terms = f'''<h1>{t("Terms of service", "服务条款")}</h1>
 {H("3. What's included", "3. 服务内容")}
 {P('Each plan includes what is listed on our <a href="/#plans">plans and prices</a> section at the time you pay, including the number of days and rounds of changes. Extras (extra days, groups of 5 or more, 48-hour rush) are charged as listed.', '每个方案的内容以你付款时<a href="/#plans">方案与价格</a>中所列为准，包括天数及修改次数。附加项目（加天、5 人以上、48 小时加急）按所列收费。')}
 {H("4. Payment", "4. 付款")}
-{UL(("Itinerary Check (S$29): paid in full before we start. The S$29 is credited toward any of our three trip-planning packages if you upgrade.", "行程检查（S$29）：开始前全额付款。如之后升级，这 S$29 可抵扣任何一个规划方案。"),
+{UL(("Itinerary Check (S$29): paid in full before we start. The S$29 is credited toward any of our three trip-planning packages if you upgrade, and comes off the deposit.", "行程检查（S$29）：开始前全额付款。如之后升级，这 S$29 可抵扣任何一个规划方案，直接从订金中扣除。"),
      ("Plans: a 50% deposit starts the planning; the balance is due before we send your final plan.", "行程方案：先付 50% 订金开始规划，发送最终行程前付清余款。"),
      ("Prices are in Singapore dollars. Any PayPal, bank or currency conversion fees on your side are yours to pay.", "价格以新元计。你方产生的 PayPal、银行或货币兑换费用由你承担。"))}
 {H("5. Your information", "5. 你提供的资料")}
@@ -180,7 +180,7 @@ refunds = f'''<h1>{t("Cancellation & refund policy", "取消及退款政策")}</
 {H("Itinerary Check (S$29)", "行程检查（S$29）")}
 {UL(("Full refund if you cancel before we start checking your itinerary.", "在我们开始检查你的行程前取消，可全额退款。"),
      ("Once we've started, it can't be refunded, but you'll still get your check and call.", "开始检查后不予退款，但你仍会收到检查结果和通话。"),
-     ("Upgrade later and your S$29 Itinerary Check fee is credited toward any of our three trip-planning packages (S$129, S$269 or S$399).", "之后升级的话，这 S$29 行程检查费用可抵扣任何一个规划方案（S$129、S$269 或 S$399）。"))}
+     ("Upgrade later and your S$29 Itinerary Check fee is credited toward any of our three trip-planning packages (S$129, S$269 or S$399). It comes off your deposit.", "之后升级的话，这 S$29 行程检查费用可抵扣任何一个规划方案（S$129、S$269 或 S$399），直接从订金中扣除。"))}
 {H("Plans (S$129, S$269, S$399)", "行程方案（S$129、S$269、S$399）")}
 {UL(("Full refund of your deposit if you cancel before planning starts (before our planning call).", "在开始规划前（规划通话前）取消，可全额退还订金。"),
      ("Once planning has started, the deposit isn't refundable, but you'll still receive your plan.", "开始规划后，订金不予退还，但你仍会收到行程。"),
@@ -198,6 +198,18 @@ PAYPAL = 'https://www.paypal.com/ncp/payment/NCU8WPGLESDBE'
 WA_CHECK = 'https://wa.me/6582756686?text=Hi%20Kev%2C%20I%27d%20like%20an%20Itinerary%20Check%20(S%2429).'
 CHECK_BTNS = f'''<div class="actions"><a class="btn" href="{PAYPAL}" target="_blank" rel="noopener">{t("Pay S$29 with PayPal or card", "用 PayPal 或银行卡付款 S$29")}</a><a class="btn ghost" href="{WA_CHECK}" target="_blank" rel="noopener">{t("Ask me first on WhatsApp", "先在 WhatsApp 问问")}</a></div>'''
 
+CHECK_FORM = """<h2 id="send">""" + t("Paid? Send me your trip", "已付款？把行程发给我") + """</h2>
+<form id="checkform" class="box">
+<label>""" + t("Name on your PayPal payment", "PayPal 付款人姓名") + """<input name="name" required></label>
+<label>""" + t("Country you live in", "你居住的国家") + """<input name="country" required></label>
+<label>""" + t("Travel dates", "旅行日期") + """<input name="dates" placeholder="12–16 Jan 2027" required></label>
+<label>""" + t("Travellers (adults, children and ages)", "同行人员（大人、孩子及年龄）") + """<input name="who" placeholder="2 adults, 2 kids (6, 9)" required></label>
+<label>""" + t("Your time zone for the call", "通话用的时区") + """<input name="tz" placeholder="Sydney (AEDT)"></label>
+<label>""" + t("Paste your itinerary (or attach the file in WhatsApp after this opens)", "贴上你的行程（或在打开 WhatsApp 后附上文件）") + """<textarea name="plan" rows="7"></textarea></label>
+<button class="btn" type="submit">""" + t("Send via WhatsApp", "通过 WhatsApp 发送") + """</button>
+</form>
+<script>document.getElementById('checkform').addEventListener('submit',function(e){e.preventDefault();var f=e.target,v=function(n){return (f[n].value||'').trim()};var m=['Hi Kev! I paid for the S$29 Itinerary Check.','Payment name: '+v('name'),'Country: '+v('country'),'Dates: '+v('dates'),'Travellers: '+v('who'),'Call time zone: '+v('tz'),'Itinerary:',v('plan')||'(attaching it here)'].join('\\n');window.open('https://wa.me/6582756686?text='+encodeURIComponent(m),'_blank')});</script>"""
+
 # ---------- Itinerary Check ----------
 check = f'''<h1>{t("Itinerary Check — S$29", "行程检查 — S$29")}</h1>
 <p class="lead">{t("Already planned your Singapore trip? Send it to me. A local checks it and tells you what to fix, and why.", "已经排好新加坡行程了？发给我。本地人帮你检查，告诉你哪里要改、为什么。")}</p>
@@ -209,7 +221,8 @@ check = f'''<h1>{t("Itinerary Check — S$29", "行程检查 — S$29")}</h1>
 {H("What you get", "你会得到")}
 {UL(("A check of one itinerary, up to 5 days.", "检查一份行程，最多 5 天。"),
      ("Written fixes for timing, routes, queues, food and rain, with the reason for each.", "书面修改建议：时间、路线、排队、美食和雨天安排，每一点都说明原因。"),
-     ("Back within 24 hours: order by 6pm, get it by 6pm the next day (Singapore time).", "24 小时内回复：下午 6 点前下单，隔天下午 6 点前收到（新加坡时间）。"),
+     ("Back within 24 hours. The clock starts once I have both your payment and your itinerary details, whichever comes later.", "24 小时内回复。从我收到付款和行程资料（以较晚者为准）开始计算。"),
+     ("One follow-up question by WhatsApp after you get your fixes.", "收到修改建议后，可通过 WhatsApp 再问一个跟进问题。"),
      ("Plus a 20-minute call to answer your questions, in English or 中文.", "再加 20 分钟通话解答你的问题，中英文都可以。"))}
 {H("What to send me", "需要提供什么")}
 {UL(("Your itinerary, in any format: a document, PDF, screenshots or notes are all fine.", "你的行程，任何格式都可以：文档、PDF、截图或笔记都行。"),
@@ -220,11 +233,12 @@ check = f'''<h1>{t("Itinerary Check — S$29", "行程检查 — S$29")}</h1>
 {H("How it works", "流程")}
 <ol class="steps">
 <li>{t("Pay S$29 by PayPal or card using the button on this page.", "用本页的按钮，以 PayPal 或银行卡付款 S$29。")}</li>
-<li>{t('WhatsApp your itinerary and the details above to <a href="https://wa.me/6582756686">+65 8275 6686</a>, with the name on your payment. Email works too: <a href="mailto:pocketlocal.sg@gmail.com">pocketlocal.sg@gmail.com</a>.', '把行程和以上资料 WhatsApp 发到 <a href="https://wa.me/6582756686">+65 8275 6686</a>，并注明付款人姓名。也可以发电邮至 <a href="mailto:pocketlocal.sg@gmail.com">pocketlocal.sg@gmail.com</a>。')}</li>
-<li>{t("Within 24 hours you get your written fixes by WhatsApp or email.", "24 小时内，你会通过 WhatsApp 或电邮收到书面修改建议。")}</li>
+<li>{t('Fill in the short form below (it opens WhatsApp with your answers), or WhatsApp your itinerary and the details above to <a href="https://wa.me/6582756686">+65 8275 6686</a>, with the name on your payment. Email works too: <a href="mailto:pocketlocal.sg@gmail.com">pocketlocal.sg@gmail.com</a>.', '填写下面的简短表格（会自动打开 WhatsApp 并带上你的答案），或把行程和以上资料 WhatsApp 发到 <a href="https://wa.me/6582756686">+65 8275 6686</a>，并注明付款人姓名。也可以发电邮至 <a href="mailto:pocketlocal.sg@gmail.com">pocketlocal.sg@gmail.com</a>。')}</li>
+<li>{t("Within 24 hours of getting both, you get your written fixes by WhatsApp or email.", "收到付款和行程资料后 24 小时内，你会通过 WhatsApp 或电邮收到书面修改建议。")}</li>
 <li>{t("We book your 20-minute call at a time that suits you.", "再约一个你方便的时间，进行 20 分钟通话。")}</li>
 </ol>
-<div class="box"><p><b>{t("Want me to plan the whole trip later?", "之后想让我规划整个行程？")}</b></p>{P("Your S$29 Itinerary Check fee will be credited towards any of our three trip-planning packages: Plan (S$129), Plan + Welcome (S$269) or Plan + Welcome + Support (S$399).", "你的 S$29 行程检查费用可抵扣任何一个规划方案：行程规划（S$129）、规划 + 机场迎接（S$269）或规划 + 迎接 + 全程支援（S$399）。")}<p><a href="/#plans">{t("See the packages →", "查看方案 →")}</a></p></div>
+<div class="box"><p><b>{t("Want me to plan the whole trip later?", "之后想让我规划整个行程？")}</b></p>{P("Your S$29 Itinerary Check fee will be credited towards any of our three trip-planning packages: Plan (S$129), Plan + Welcome (S$269) or Plan + Welcome + Support (S$399). It comes off your 50% deposit when you upgrade.", "你的 S$29 行程检查费用可抵扣任何一个规划方案：行程规划（S$129）、规划 + 机场迎接（S$269）或规划 + 迎接 + 全程支援（S$399）。升级时直接从 50% 订金中扣除。")}<p><a href="/#plans">{t("See the packages →", "查看方案 →")}</a></p></div>
+{CHECK_FORM}
 {H("Good to know", "注意事项")}
 {UL(("Planning advice only. You book and pay attractions, restaurants and other providers directly. No commissions.", "只提供规划建议。景点、餐厅和其他服务由你直接预订和付款。我们不收任何佣金。"),
      ('Full refund if you cancel before I start checking. See the <a href="/refunds">refund policy</a>.', '在我开始检查前取消，可全额退款。请参阅<a href="/refunds">退款政策</a>。'),
