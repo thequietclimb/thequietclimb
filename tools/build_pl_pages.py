@@ -212,6 +212,21 @@ CHECK_FORM = """<h2 id="send">""" + t("Paid? Send me your trip", "已付款？�
 </form>
 <script>document.getElementById('checkform').addEventListener('submit',function(e){e.preventDefault();var f=e.target,v=function(n){return (f[n].value||'').trim()};var m=['Hi Kev! I paid for the S$29 Itinerary Check.','Payment name: '+v('name'),'Country: '+v('country'),'Dates: '+v('dates'),'Travellers: '+v('who'),'Call time zone: '+v('tz'),'Itinerary:',v('plan')||'(attaching it here)'].join('\\n');window.open('https://wa.me/6582756686?text='+encodeURIComponent(m),'_blank')});</script>"""
 
+SAMPLE = f"""<h2 id="sample">{t("What you get back: a sample", "你会收到什么：示例")}</h2>
+<div class="box"><p class="meta" style="margin-bottom:10px">{t("Made-up example, not a real customer's plan.", "虚构示例，并非真实客户的行程。")}</p>
+<p><b>{t("The plan sent in (3 days):", "客人发来的行程（3 天）：")}</b></p>
+{UL(("Day 1: Sentosa morning, Chinatown lunch, Sentosa afternoon", "第 1 天：上午圣淘沙，中午牛车水，下午又回圣淘沙"),
+    ("Day 2: Gardens by the Bay + paid light-show tickets", "第 2 天：滨海湾花园 + 付费灯光秀门票"),
+    ("Day 3: Orchard Road shopping, food court lunch S$15", "第 3 天：乌节路购物，美食广场午餐 S$15"))}
+<p><b>{t("The fixes (in writing, within 24 hours):", "修改建议（书面，24 小时内）：")}</b></p>
+<ol class="steps">
+<li>{t("<b>Stop zigzagging.</b> Sentosa, then Chinatown, then back to Sentosa costs about 1.5 hours of travel. Keep Sentosa in one block and do Chinatown for dinner.", "<b>别来回跑。</b>圣淘沙、牛车水再回圣淘沙，路上大约多花 1.5 小时。把圣淘沙排在一起，牛车水改成晚餐。")}</li>
+<li>{t("<b>The light show is free.</b> Garden Rhapsody at the Supertree Grove is free every night. The paid tickets are for other parts of the Gardens, not the show.", "<b>灯光秀是免费的。</b>擎天树的 Garden Rhapsody 每晚免费。付费门票是花园里其他景点的，不是灯光秀。")}</li>
+<li>{t("<b>Lunch should cost about S$5, not S$15.</b> Eat at a hawker centre near Orchard Road: the same kind of food at a third of the price.", "<b>午餐大约 S$5 就够，不用 S$15。</b>去乌节路附近的小贩中心吃，同样的食物，三分之一的价钱。")}</li>
+<li>{t("<b>Shop after 3pm.</b> Orchard Road is hottest and busiest at midday. Hawker lunch first, shops later when it's cooler.", "<b>下午 3 点后再逛街。</b>中午乌节路最热也最挤。先吃小贩中心，凉快些再逛。")}</li>
+<li>{t("<b>No beach at midday.</b> The sun is strongest from 12 to 3pm. Do the beach before 11am or after 4pm, and an indoor spot like the Singapore Oceanarium in between.", "<b>中午别去海滩。</b>12 点到 3 点太阳最猛。海滩安排在 11 点前或 4 点后，中间去新加坡海洋馆（Singapore Oceanarium）等室内景点。")}</li>
+</ol></div>"""
+
 # ---------- Itinerary Check ----------
 check = f'''<h1>{t("Itinerary Check — S$29", "行程检查 — S$29")}</h1>
 <p class="lead">{t("Already planned your Singapore trip? Send it to me. A local checks it and tells you what to fix, and why.", "已经排好新加坡行程了？发给我。本地人帮你检查，告诉你哪里要改、为什么。")}</p>
@@ -226,6 +241,7 @@ check = f'''<h1>{t("Itinerary Check — S$29", "行程检查 — S$29")}</h1>
      ("Back within 24 hours. The clock starts once I have both your payment and your itinerary details, whichever comes later.", "24 小时内回复。从我收到付款和行程资料（以较晚者为准）开始计算。"),
      ("One follow-up question by WhatsApp after you get your fixes.", "收到修改建议后，可通过 WhatsApp 再问一个跟进问题。"),
      ("Plus a 20-minute call to answer your questions, in English or 中文.", "再加 20 分钟通话解答你的问题，中英文都可以。"))}
+{SAMPLE}
 {H("What to send me", "需要提供什么")}
 {UL(("Your itinerary, in any format: a document, PDF, screenshots or notes are all fine.", "你的行程，任何格式都可以：文档、PDF、截图或笔记都行。"),
      ("Your travel dates and arrival and departure times.", "旅行日期，以及抵达和离开的时间。"),
