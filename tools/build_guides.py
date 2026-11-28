@@ -8,6 +8,7 @@ G = json.load(open(os.path.join(ROOT, 'tools', 'guides.json')))
 G.sort(key=lambda g: g['date'], reverse=True)
 e = html.escape
 SITE = 'https://pocketlocalsg.com'
+import sys; sys.path.insert(0, os.path.join(ROOT, 'tools')); from pixel import PIXEL
 
 def fmt(d): return datetime.date.fromisoformat(d).strftime('%-d %b %Y')
 
@@ -49,7 +50,7 @@ for g in G:
     page = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(g["title"])} | Pocket Local Singapore</title><meta name="description" content="{e(g["summary"])}"><link rel="canonical" href="{url}">
 <meta property="og:title" content="{e(g["title"])}"><meta property="og:description" content="{e(g["summary"])}"><meta property="og:image" content="{SITE}{g["imgs"][0]}"><meta property="og:url" content="{url}"><meta name="twitter:card" content="summary_large_image">
-{FONTS}<style>{CSS}</style><script type="application/ld+json">{ld}</script></head><body>
+{FONTS}<style>{CSS}</style><script type="application/ld+json">{ld}</script>{PIXEL}</head><body>
 <header><div class="wrap"><a class="logo" href="{SITE}/">Pocket <span>Local</span></a><a class="btn" href="{SITE}/#plan-form">Plan my trip</a></div></header>
 <main class="wrap"><h1>{e(g["title"])}</h1><div class="meta">{e(g["title_zh"])} · {fmt(g["date"])}</div><p class="lead">{e(g["summary"])}</p>
 <div class="slides">{slides}</div><div class="hint">Swipe for more →</div>

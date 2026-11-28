@@ -2,7 +2,9 @@
 """Builds the Pocket Local About, Privacy, Terms and Refunds pages into public/pl/.
 Served at pocketlocalsg.com/about, /privacy, /terms, /refunds by src/index.js.
 Edit the text below, then run: python3 tools/build_pl_pages.py"""
-import os
+import os, sys
+sys.path.insert(0, os.path.dirname(__file__))
+from pixel import PIXEL
 
 PUB = os.path.join(os.path.dirname(__file__), '..', 'public')
 SITE = 'https://pocketlocalsg.com'
@@ -61,7 +63,7 @@ def page(slug, title, desc, body, index=True):
 <link rel="canonical" href="{SITE}/{slug}">{'' if index else '<meta name="robots" content="noindex">'}
 <meta property="og:title" content="{title} | Pocket Local Singapore"><meta property="og:description" content="{desc}"><meta property="og:url" content="{SITE}/{slug}"><meta property="og:image" content="{SITE}/img/pl_share.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#193447">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Inter:wght@400;600&family=Noto+Sans+SC:wght@400;600&display=swap" rel="stylesheet">
-<style>{CSS}</style></head><body>
+<style>{CSS}</style>{PIXEL}</head><body>
 <header><div class="wrap"><a class="logo" href="/">Pocket <span>Local</span></a><div class="tools"><button class="lang" id="lang" type="button" aria-label="Switch language">中文</button><a class="btn sm" href="/#plan-form">{t('Plan my trip','规划我的行程')}</a></div></div></header>
 <main class="wrap">
 {body}
@@ -136,7 +138,7 @@ privacy = f'''<h1>{t("Privacy policy", "隐私政策")}</h1>
 {H("Your choices", "你的权利")}
 {P("You can ask to see the personal information we hold about you, correct it, or withdraw your consent and have it deleted. Just message us and we'll reply within 30 days.", "你可以要求查看、更正我们持有的个人资料，或撤回同意并要求删除。联系我们即可，我们会在 30 天内回复。")}
 {H("Our website", "我们的网站")}
-{P("Our website doesn't use advertising cookies. It saves your language choice (English or 中文) in your browser so the site remembers it. If we add visitor statistics in the future, we'll update this page.", "我们的网站不使用广告 Cookie。网站会在你的浏览器中保存你的语言选择（English 或中文），方便下次记住。如将来加入访客统计，我们会更新本页。")}
+{P("Our website saves your language choice (English or 中文) in your browser so the site remembers it. We also use the Meta Pixel, a small piece of code from Meta (Facebook and Instagram). It tells us when someone who saw our ads visits the site, taps to pay or sends a form, so we can measure and improve our ads. Meta may use cookies for this and processes the data under its own privacy policy. It doesn't give us your name or contact details. You can control ad tracking in your Facebook or Instagram ad settings and in your browser.", "网站会在你的浏览器中保存语言选择（English 或 中文），方便下次记住。我们也使用 Meta 像素（Meta Pixel），这是来自 Meta（Facebook 和 Instagram）的一小段代码，用来了解看过我们广告的人是否访问网站、点击付款或提交表格，以便衡量和改进广告效果。Meta 可能为此使用 Cookie，并按其隐私政策处理数据。它不会把你的姓名或联系方式提供给我们。你可以在 Facebook 或 Instagram 的广告设置以及浏览器中管理广告追踪。")}
 {H("Contact", "联系我们")}
 {CONTACT}'''
 
